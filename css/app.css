@@ -1,0 +1,159 @@
+/* app css stylesheet */
+body{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 0.8em;
+    margin: 0;
+}
+
+ng-cloak {
+  display: none !important;
+}
+
+ul{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    color:#363537;
+}
+
+li{
+    color: #606062;
+}
+
+h1{
+    margin: 0;
+    background:#EDEDED;
+    font-size: 1.2em;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    border-top: solid 0.05em;
+    border-color: #C6C6C6;
+    color: #363537;
+}
+
+h2{
+    margin:0;
+    padding: 0;
+    font-size: 1em;
+    color: #363537;
+}
+
+p{
+    padding:0;
+    margin:0;
+    font-size:1em;
+    font-weight: 100;
+    color: #606062;
+}
+
+a{
+    text-decoration:none;
+}
+
+.window{
+    height:100%;
+    left:inherit;
+    margin-top: 4em;
+    overflow:hidden;
+}
+
+.selectable{
+    cursor:pointer;
+}
+
+.all{
+    height:100%;
+    width:100%;
+    margin-left:0;
+}
+
+.slideAll{
+    width:100%;
+    position: fixed;
+    margin-left: 17em;
+}
+
+.navbar{
+    position: fixed;
+    left:inherit;
+    top:0;
+    width:100%;
+    height:4em;
+    background:#043266;
+    color: white;
+    text-align: center;
+}
+
+#menubutton{
+    padding: 1em;
+    height:2.2em;
+    width:auto;
+    cursor:pointer;
+    float: left;
+}
+
+.rotated {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.title{
+    width:100%;
+    margin-top:0.1em;
+    margin-left:-2.7em;
+    background:none;
+    border:none;
+    font-size: 2.1em;
+    font-weight: 100;
+    color:white;
+}
+
+.request{
+    margin-top:0.4em;
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+    display:block;
+    background:rgba(255,255,255,0.1);
+    color: white;
+    font-size:1.7em;
+    font-weight:100;
+    text-align: center;
+    border:solid 0.05em;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.spacer{
+    margin-bottom:5em;
+}
+
+.footer{
+    position: fixed;
+    left:inherit;
+    bottom:0;
+    width:100%;
+    height:4em;
+    background:#043266;
+    color: white;
+}
+
+.centeredContainer{
+    width:100%;
+    text-align:center;
+}
+
+.js #loader { 
+    display: inline-block; 
+    position: absolute; 
+    left:48%;
+    margin-left:-1em;
+    top: 40%; 
+}
+

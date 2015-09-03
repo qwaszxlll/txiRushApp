@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Event Info -->
+        <ul class='spacer'>
+            <li class="day" data ng-repeat="day in days">
+                <h1 class="dayName">{{day.name}}</h1>
+                <ul>
+                <li class="event selectable" data ng-repeat="event in day.events" ng-click="openPopup(event)">
+                    <img class="eventIcon" ng-show="!isOutOfHouse(event.location)" src="img/txiIcon.png">
+                    <img class="eventIcon" ng-show="isOutOfHouse(event.location)" src="img/oohIcon.png">
+                    <div class="info" id="{{event.name}}">
+                        <h2>{{event.name}}</h2>
+                        <p class="eventDetails">{{event.location}} - {{event.startTime}}</p>
+                    </div>
+                    <img class="smallIcon" src="img/GrayArrow.png">                 
+                </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- POPUP -->
+        <div class="popup" ng-show="hasPopup" id="popup" ng-cloak>
+            <h1 class="title popupTitle">Event Info</h1>
+            <img class="xButton" src="img/xButton.png" ng-click="closePopup()">
+            <div class="popUpField">
+                <div class="picContainer" style={{getImageStyle(currentEvent.photoID)}}>
+                    <div class="eventName"> {{currentEvent.name}} </div>
+                </div>
+                <pre class="eventDescription">{{currentEvent.description}}</pre>
+            </div>
+        </div>
+        <div class="footer" ng-show="!hasPopup">
+            <a href="#/vanRequest" ng-click="setPath('#/events')"><div class="request"> Pick Me Up! </div></a>
+        </div>
+    </body>
+</html>

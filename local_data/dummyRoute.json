@@ -1,0 +1,21 @@
+{   
+    "pendingRoutes": ["east", "west"],
+    "east": [
+          {"loc": "Maseeh", "ppl": 2}, 
+          {"loc": "Mccormick", "ppl": 0}, 
+          {"loc": "Baker", "ppl": 3}, 
+          {"loc": "Burton Conner", "ppl": 3}, 
+          {"loc": "Macgregor", "ppl": 1}, 
+          {"loc": "New House", "ppl": 2}, 
+          {"loc": "Next House", "ppl": 2}, 
+          {"loc": "Student Center", "ppl": 0},
+          {"loc": "Theta Xi", "ppl": "Destination"}
+        ],
+    "west": [
+          {"loc": "Simmons", "ppl": 1}, 
+          {"loc": "77 Mass Ave", "ppl": 2}, 
+          {"loc": "Stata @ Vassar", "ppl": 0}, 
+          {"loc": "Senior House/ E.C. @ Amherst", "ppl": 3},
+          {"loc": "Theta Xi", "ppl": "Destination"}
+        ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="spacer">
+            <!--Main Form-->
+            <p class="headnote"> Choose the location nearest to you, and if there isn't 
+                already a van on it's way, we'll send one as soon as possible! </p>
+            <ul>
+                <li class="place selectable option" ng-repeat="location in locations" 
+                    ng-click="select(location)">
+                    <img ng-src="{{dot($first, $last, location)}}" class="optionDot">
+                    <div class="locationText"> {{location}} </div>
+                </li>
+            </ul>
+            <p class="footnote spacer">If you need to be picked up from a location that is not 
+                on this list, please call 617-9020-TXI</p>
+        </div>
+        <div class="footer">
+            <a href={{returnPath}} ng-show="submitable()" ng-click="submitRequest()"><div class="request">Submit</div></a>
+        </div>
+    </body>
+</html>

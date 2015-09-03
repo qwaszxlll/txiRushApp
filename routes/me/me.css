@@ -1,0 +1,45 @@
+.meBox{
+    margin-top:20%;
+    width:100%;
+    text-align: center;
+}
+.meHeader{
+    border:none;
+    background: none;
+    border-bottom:solid 0.1em;
+    width:80%;
+    margin: auto;
+    margin-top:0.5em;
+    margin-bottom:1em;
+}
+.meSmall{
+    font-size:1em;
+    border-bottom:none;
+    margin-bottom:0;
+}
+.meInput{
+    border-radius:5px;
+    padding:0.4em;
+    border:solid 0.1em;
+    border-color:#C6C6C6;
+
+}
+.meButton{
+    margin:1em;
+    background:white;
+    border: solid 0.1em;
+    border-color:#C6C6C6;
+    color: #606062;
+    border-radius:5px;
+    padding:0.4em;
+}
+
+.saveSuccess{
+    margin-top: 0.5em;
+    color:green;
+}
+
+.saveFail{
+    margin-top: 0.5em;
+    color:red;
+}

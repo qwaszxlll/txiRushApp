@@ -1,0 +1,39 @@
+.loginHelp{
+    display:inline-block;
+    width:80%;
+}
+.loginError{
+    margin-top: 0.5em;
+    color:red;
+}
+.loginButton{
+    background:white;
+    border: solid 0.1em;
+    border-color:#C6C6C6;
+    color: #606062;
+    border-radius:5px;
+    padding:0.4em;
+    margin-bottom:1em;
+    display:inline-block;
+    width: 40%;
+    box-sizing: border-box;
+    cursor:pointer;
+}
+
+.leftButton{
+    border-right:none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-right:0;
+}
+
+.rightButton{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left:-0.3em;
+}
+
+.loginSelected {
+    background: #AFE299;
+    color: white;
+}

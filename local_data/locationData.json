@@ -1,0 +1,16 @@
+{
+    "allLocations": [
+          {"name": "Maseeh", "ppl": 0, "status":"pending"}, 
+          {"name": "Mccormick", "ppl": 0, "status":"pending"}, 
+          {"name": "Baker", "ppl": 0, "status":"pending"}, 
+          {"name": "Burton Conner", "ppl": 0, "status":"pending"}, 
+          {"name": "Macgregor", "ppl": 0, "status":"pending"}, 
+          {"name": "New House", "ppl": 0, "status":"pending"}, 
+          {"name": "Next House", "ppl": 0, "status":"pending"}, 
+          {"name": "Simmons", "ppl": 0, "status":"pending"}, 
+          {"name": "Student Center", "ppl": 0, "status":"pending"},
+          {"name": "Stata @ Vassar", "ppl": 0, "status":"pending"},
+          {"name": "Senior House/ E.C. @ Amherst", "ppl": 0, "status":"pending"},
+          {"name": "Theta Xi", "ppl": "done", "status":"pending"}
+        ]
+}

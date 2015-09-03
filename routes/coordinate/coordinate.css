@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 17, 2014, 3:59:32 PM
+    Author     : caleblin
+*/
+
+.coordinateOptions{
+    width:100%;
+    padding-top:1em;    
+    margin: 0;
+    margin-top:0.2em;
+    padding: 1em;
+    border-top: solid 0.05em;
+    border-color: #C6C6C6;
+    background:#EDEDED; 
+}
+
+.optionHeader{
+    width:auto;
+    height:2em;
+    font-size:1.2em;
+    display:inline-block;
+}
+
+.rusheeList{
+    margin-left:2em;
+    height:2.9em;
+}
+
+.addRusheeButton{
+    margin-top:-0.3em;
+    height:2.4em;
+    width:auto;
+    display:inline-block;
+    float:right;
+    margin-right:2em;
+    cursor:pointer;
+}
+.brotherOptions{
+    width:45%;
+    margin:0.17em;
+    font-size:1.2em;
+    text-align: center;
+}
+
+.selected{
+    color:green;
+    background-color:rgba(0,255,0,0.2);
+}
+
+.total{
+    float:center;
+    margin-top:0.2em;
+    padding:1em;
+    width:23%;
+    display:inline-block;
+    text-align: center;
+}
+
+.sendVan{
+    text-align: center;
+}

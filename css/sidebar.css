@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 9, 2014, 10:48:11 PM
+    Author     : caleblin
+cbp-spmenu 
+cbp-spmenu-vertical 
+cbp-spmenu-left 
+id=cbp-spmenu-s1
+*/
+
+.sidebar{
+    background: #1e1e1e;
+    position:fixed;
+    width: 15em;
+    height: 100%;
+    padding:1em;
+    top: 0;
+    display:inline-block;
+}
+
+.sidebarHidden{
+    background: #1e1e1e;
+    position:fixed;
+    width: 0em;
+    height: 100%;
+    padding:0;
+    top: 0;
+    display:inline-block;
+}
+
+/* General styles for all menus */
+
+.sidebar a {
+    display: block;
+    color: #fff;
+    font-size: 1.6em;
+    width: 15em;
+    font-weight: 300;
+    margin:1em;
+    text-decoration: none;
+}
+ 
+.sidebar a:active {
+    color: #47a3da;
+}
+
+.sidebar-open {
+    left: 0px;
+}
+ 
+/* Push classes applied to the body */
+ 
+.sidebar-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+ 
+.sidebar-push-toright {
+    left: 240px;
+}
+ 
+.sidebar-push-toleft {
+    left: -240px;
+}
+ 
+/* Transitions */
+ 
+.sidebar,
+.sidebar-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}

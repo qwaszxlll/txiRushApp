@@ -1,0 +1,377 @@
+{
+  "days": [
+    {
+      "events": [
+        {
+          "Cleanup Crew": "Pikachu", 
+          "Date": "8/30/2014", 
+          "Day of Week": "Saturday", 
+          "Description": "We're bringing in our Chef to help kick off rush with some delicious ribs, so make sure you get your hands on some before they're all gone!", 
+          "Event": "Ribs TXI", 
+          "Location": "TXI", 
+          "Running": "Charmander", 
+          "Secondary": "All", 
+          "Time": "12:30 PM",
+          "ID": "ribstxi"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "8/30/2014", 
+          "Day of Week": "Saturday", 
+          "Description": "We go ham when it comes to Smash, so bring your A-game to compete for some awesome prizes! \n 1st Place: Audio Technica Headphones \n 2nd Place: Full Speaker System w/ Subwoofer", 
+          "Event": "Super Smash Tournament", 
+          "Location": "TXI", 
+          "Running": "Squirtle", 
+          "Secondary": "", 
+          "Time": "1:30 PM",
+          "ID": "supersmash"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "8/30/2014", 
+          "Day of Week": "Saturday", 
+          "Description": "4 teams get out onto the Charles with Super soakers and water cannons for an hour long fight to the death. Alliances will be made, Friendships will be broken; Not everyone will make it out alive. Quarter pounders with cheese on the grill when you’re not on the water, unless you’re from Europe - then it’s Royale with Cheese.", 
+          "Event": "On The Charles: Battle Royale, With Cheese", 
+          "Location": "Sailing Pavilion", 
+          "Running": "Bulbasaur", 
+          "Secondary": "Pikachu", 
+          "Time": "3:00 PM",
+          "ID": "battleroyale"
+        }, 
+        {
+          "Cleanup Crew": "Pikachu", 
+          "Date": "8/30/2014", 
+          "Day of Week": "Saturday", 
+          "Description": "You can't arrive in Boston and not try things like clam chowder and lobster tails. Let us be your introduction (or refresher) to these Boston classics!", 
+          "Event": "Taste Of Boston", 
+          "Location": "TXI", 
+          "Running": "Charmander", 
+          "Secondary": "Squirtle", 
+          "Time": "6:00 PM",
+          "ID": "tasteofboston"
+        }, 
+        {
+          "Cleanup Crew": "Volunteer Crew", 
+          "Date": "8/30/2014", 
+          "Day of Week": "Saturday", 
+          "Description": "We're all about the indie scene, so if that's you as well, come join us for a night of acoustic acts from around Boston, including performances by our own Brothers! There will also be a fully stocked espresso bar if you're feeling a bit drowsy after your first day of Rush. ", 
+          "Event": "TXI Unplugged", 
+          "Location": "TXI", 
+          "Running": "Squirtle", 
+          "Secondary": "Charmander", 
+          "Time": "8:00 PM",
+          "ID": "txiunplugged"
+          
+        }
+      ], 
+      "name": "Saturday"
+    }, 
+    {
+      "events": [
+        {
+          "Cleanup Crew": "", 
+          "Date": "8/31/2014", 
+          "Day of Week": "Sunday", 
+          "Description": "", 
+          "Event": "Dim Sum Run", 
+          "Location": "Hei La Moon", 
+          "Running": "Squirtle", 
+          "Secondary": "Bulbasaur", 
+          "Time": "11:00 AM",
+          "ID": "dimsum"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "8/31/2014", 
+          "Day of Week": "Sunday", 
+          "Description": "It's time for a little childhood nostalgia - trampolines and dodgeball, but all at once! So come along and ractice your aim on moving targets... while flying. ", 
+          "Event": "Skyzone Dodgeball", 
+          "Location": "Skyzone", 
+          "Running": "Pikachu", 
+          "Secondary": "Charmander", 
+          "Time": "1:00 PM",
+          "ID": "skyzone"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "8/31/2014", 
+          "Day of Week": "Sunday", 
+          "Description": "", 
+          "Event": "Boba Run", 
+          "Location": "Kung Fu Tea", 
+          "Running": "Squirtle", 
+          "Secondary": "Any", 
+          "Time": "4:00 PM",
+          "ID": "boba"
+        }, 
+        {
+          "Cleanup Crew": "Bulbasaur", 
+          "Date": "8/31/2014", 
+          "Day of Week": "Sunday", 
+          "Description": "Meat goes on the grill at 6, so don't be late!", 
+          "Event": "Supa Chill n' Grill", 
+          "Location": "TXI", 
+          "Running": "Charmander", 
+          "Secondary": "", 
+          "Time": "6:00 PM",
+          "ID": "chillngrill"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "8/31/2014", 
+          "Day of Week": "Sunday", 
+          "Description": "We have some pretty good pool players and an active in-house ladder, so play to impress.. and to win some sick prizes. Sign-up starts at 6pm and the tournament starts at 6:30pm, so grab a burger and put your name on the board! \n First Prize: 24'' LCD Monitor \n Runner Up: Speaker system w/ subwoofer", 
+          "Event": "Pool Tournament", 
+          "Location": "TXI", 
+          "Running": "Squirtle", 
+          "Secondary": "", 
+          "Time": "6:00 PM",
+          "ID": "pool"
+        }, 
+        {
+          "Cleanup Crew": "Volunteer Crew", 
+          "Date": "8/31/2014", 
+          "Day of Week": "Sunday", 
+          "Description": "Join us for our annual scavenger hunt that will take you from the highest of highs, (and possibly) the lowest of lows all over Boston! Meet up at the house and join a team before embarking on the biggest scavener hunt of your life!", 
+          "Event": "BASH", 
+          "Location": "Greater Boston", 
+          "Running": "Charmander", 
+          "Secondary": "All", 
+          "Time": "8:00 PM",
+          "ID": "bash"
+        }
+      ], 
+      "name": "Sunday"
+    }, 
+    {
+      "events": [
+        {
+          "Cleanup Crew": "Squirtle", 
+          "Date": "9/1/2014", 
+          "Day of Week": "Monday", 
+          "Description": "We're fans of the European cuisines, so if you're into crepes, exotic fudges, cold cuts, and cheese, we're your guys!", 
+          "Event": "Euro Brunch", 
+          "Location": "TXI", 
+          "Running": "Bulbasaur", 
+          "Secondary": "Squirtle", 
+          "Time": "11:00 AM",
+          "ID": "eurobrunch"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/1/2014", 
+          "Day of Week": "Monday", 
+          "Description": "Time to get competitive with (hopefully) no repercussions!", 
+          "Event": "Paintball", 
+          "Location": "TBD", 
+          "Running": "Pikachu", 
+          "Secondary": "Charmander", 
+          "Time": "1:00 PM",
+          "ID": "paintball"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/1/2014", 
+          "Day of Week": "Monday", 
+          "Description": "Ever wanted to learn some cool dance moves? Join our RA and brothers for a dance workshop for beginners and intermediate hip-hop dancers!", 
+          "Event": "Hip Hop Workshop", 
+          "Location": "Mccormick Dance Studio", 
+          "Running": "Richard", 
+          "Secondary": "Special Team", 
+          "Time": "4:00 PM",
+          "ID": "danceworkshop"
+        }, 
+        {
+          "Cleanup Crew": "Charmander", 
+          "Date": "9/1/2014", 
+          "Day of Week": "Monday", 
+          "Description": "Get the full package and help us wrap dumplings or just come and enjoy the results!", 
+          "Event": "Dumpling Bonanza", 
+          "Location": "TXI", 
+          "Running": "Charmander", 
+          "Secondary": "Squirtle", 
+          "Time": "6:00 PM",
+          "ID": "dumplings"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/1/2014", 
+          "Day of Week": "Monday", 
+          "Description": "We're headed out to Fort Independence for some evening excitement and competition!", 
+          "Event": "Glow In The Dark CTF", 
+          "Location": "Fort", 
+          "Running": "Bulbasaur", 
+          "Secondary": "Pikachu", 
+          "Time": "8:00 PM",
+          "ID": "ctf"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/1/2014", 
+          "Day of Week": "Monday", 
+          "Description": "Midnight IHOP run!", 
+          "Event": "IHOP Run", 
+          "Location": "IHOP", 
+          "Running": "Any", 
+          "Secondary": "", 
+          "Time": "11:00 PM",
+          "ID": "ihop"
+        }
+      ], 
+      "name": "Monday"
+    }, 
+    {
+      "events": [
+        {
+          "Cleanup Crew": "Charmander", 
+          "Date": "9/2/2014", 
+          "Day of Week": "Tuesday", 
+          "Description": "It's a smorgasbord of dishes from all around the world! Come enjoy international cuisine cooked by our own brothers.", 
+          "Event": "International Buffet", 
+          "Location": "TXI", 
+          "Running": "Special Team", 
+          "Secondary": "", 
+          "Time": "1:00 PM",
+          "ID": "buffet"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/2/2014", 
+          "Day of Week": "Tuesday", 
+          "Description": "It's soccer with a twist, and a lot of rolling around.", 
+          "Event": "Zorb Soccer", 
+          "Location": "Kresge Lawn, Z Center", 
+          "Running": "Pikachu", 
+          "Secondary": "", 
+          "Time": "3:00 PM",
+          "ID": "zorbs"
+        }, 
+        {
+          "Cleanup Crew": "Bulbasaur", 
+          "Date": "9/2/2014", 
+          "Day of Week": "Tuesday", 
+          "Description": "Come get refreshments and chill with the brothers before a busy evening!", 
+          "Event": "TXI Lemonade Stand", 
+          "Location": "TXI", 
+          "Running": "Bulbasaur", 
+          "Secondary": "", 
+          "Time": "4:00 PM",
+          "ID": "lemonadestand"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/2/2014", 
+          "Day of Week": "Tuesday", 
+          "Description": "It's a night out on the town for all-you-can eat Brazilian BBQ", 
+          "Event": "Brazilian BBQ", 
+          "Location": "TBD", 
+          "Running": "Squirtle", 
+          "Secondary": "", 
+          "Time": "6:00 PM",
+          "ID": "brazilianbbq"
+        }, 
+        {
+          "Cleanup Crew": "Squirtle, Pikachu", 
+          "Date": "9/2/2014", 
+          "Day of Week": "Tuesday", 
+          "Description": "Complete challenges that pit you with and against your fellow frosh in the quest to ascend the Tower of Power and achieve greatness!", 
+          "Event": "Tower Of Power", 
+          "Location": "TXI", 
+          "Running": "Charmander", 
+          "Secondary": "Pikachu", 
+          "Time": "9:00 PM",
+          "ID": "towerofpower"
+        }
+      ], 
+      "name": "Tuesday"
+    }, 
+    {
+      "events": [
+        {
+          "Cleanup Crew": "Bulbasaur", 
+          "Date": "9/3/2014", 
+          "Day of Week": "Wednesday", 
+          "Description": "Come by after school for some classic Steak and Shrimp!", 
+          "Event": "Surf and Turf (Invite Only)", 
+          "Location": "TXI", 
+          "Running": "Bulbasaur", 
+          "Secondary": "Squirtle", 
+          "Time": "6:00 PM",
+          "ID": "surfandturf"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/3/2014", 
+          "Day of Week": "Wednesday", 
+          "Description": "It's your time to find that elusive hole-in-one, and reward yourself either way with ice cream afterwards!", 
+          "Event": "Mini Golf", 
+          "Location": "TBD", 
+          "Running": "Pikachu", 
+          "Secondary": "", 
+          "Time": "8:00 PM",
+          "ID": "minigolf"
+        }, 
+        {
+          "Cleanup Crew": "Squirtle", 
+          "Date": "9/3/2014", 
+          "Day of Week": "Wednesday", 
+          "Description": "", 
+          "Event": "Infinite Desserts", 
+          "Location": "TXI", 
+          "Running": "Special Team", 
+          "Secondary": "", 
+          "Time": "10:00 PM",
+          "ID": "infinitedesserts"
+        }
+      ], 
+      "name": "Wednesday"
+    }, 
+    {
+      "events": [
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/4/2014", 
+          "Day of Week": "Thursday", 
+          "Description": "We'll be making the trip out to Boston's famous North End for Pizza, Cannolis, and a great view", 
+          "Event": "Dinner @ North End", 
+          "Location": "North End", 
+          "Running": "Pikachu", 
+          "Secondary": "Bulbasaur", 
+          "Time": "6:00 PM",
+          "ID": "northend"
+        }, 
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/4/2014", 
+          "Day of Week": "Thursday", 
+          "Description": "Get your diva on at Karaoke with Theta XI", 
+          "Event": "Karaoke (Invite Only)", 
+          "Location": "TBD", 
+          "Running": "Squirtle", 
+          "Secondary": "", 
+          "Time": "8:00 PM",
+          "ID": "karaoke"
+        }
+      ], 
+      "name": "Thursday"
+    }, 
+    {
+      "events": [
+        {
+          "Cleanup Crew": "", 
+          "Date": "9/5/2014", 
+          "Day of Week": "Friday", 
+          "Description": "", 
+          "Event": "Bid Dinner", 
+          "Location": "TXI", 
+          "Running": "Bidee's Primaries", 
+          "Secondary": "", 
+          "Time": "6:00 PM",
+          "ID": "txitea"
+        }
+      ], 
+      "name": "Friday"
+    }
+  ], 
+  "timestamp": 1408106527
+}

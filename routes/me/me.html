@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form ng-submit="saveMe()" class="meBox">
+            <h1 class="meHeader">Please Verify That This Information Is Correct</h1>
+            <h1 class="meHeader meSmall">Name</h1>
+            <input pattern=".{3,}" type="text" name="meName" ng-model="name" class="meInput"/><br>
+            <h1 class="meHeader meSmall">Cell</h1>
+            <input pattern=".{10,}" type="tel"name="meCell" ng-model="contact" class="meInput" placeholder="Enter your Cell Number"/><br>
+            <div ng-show='changeFail' class='saveFail'>{{saveMessage}}</div>
+            <div ng-show='changeSuccess' class='saveSuccess'>{{saveMessage}}</div>
+            <button type="submit" class="meButton">Save Changes</button> 
+            <button ng-click="clearFields()" type="button" class="meButton">Discard Changes</button>
+        </form>
+    </body>
+</html>

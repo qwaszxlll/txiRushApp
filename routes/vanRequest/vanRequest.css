@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 15, 2014, 1:04:36 PM
+    Author     : caleblin
+*/
+
+.requestBox{
+    margin-top:1em;
+    overflow:hidden;
+    width:100%;
+}
+
+.locationText{
+    display:inline-block;
+    position:absolute;
+    top: 0;
+    margin-top: 1em;
+}
+
+.option{
+    margin-left:auto;
+    margin-right:auto;
+    width:15em;
+    display:block;
+    position:relative;
+}
+
+.optionDot{
+    height:3em;
+    margin-left: 1em;
+    margin-right: 1em;
+    display:inline-block;
+}
+
+.headnote{
+    text-align:center;
+    width:90%;
+    display:block;
+    margin-top:1em;
+    margin-left:auto;
+    margin-right:auto;
+}
+.footnote{
+    margin:1em;
+    width:90%;
+    text-align:center;
+    display:block;
+    margin-top:1em;
+    margin-left:auto;
+    margin-right:auto;
+}

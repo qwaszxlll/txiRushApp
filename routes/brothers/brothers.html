@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- Brother Info -->
+        <div class="backgroundGraphics">
+          <img src='img/txiPics/txi-all.jpg' class='headerPic' ng-cloak>
+          <ul ng-cloak>
+            <li ng-repeat="i in [2016, 2017, 2018]">
+              <h1> {{i}}'s </h1>
+              <img src={{getClassImg(i)}} class='headerPic' ng-show="validHeader(i)">
+              <ul ng-cloak>
+                <li class="year" data ng-repeat="brother in brothers 
+                            | orderBy: 'delta' | filter:{ year: i }">
+                    <img src={{getBrotherImg(brother.delta)}} class='displayPic'>
+                    <div class='brotherInfo'>
+                        <h2>{{brother.name}} - Course {{brother.course}}</h2>
+                        <p>{{brother.blurb}} </p>
+                    </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="spacer"></div>
+        </div>
+    </body>
+</html>

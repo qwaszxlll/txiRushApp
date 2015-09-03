@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>       
+        <!--Create Route Block-->
+        <div class="spacer notDriving" ng-show="routeAvailable()">
+            <div class="startOptions" ng-show="initiating"> 
+                <h1 class="selectable" ng-click="toggleSelectLoop()">Select Route</h1>
+                <div class="startButton loopButton" id="West" ng-show="selectingLoop"
+                     ng-click="selectLoop('West')">West Loop</div>
+                <div class="startButton loopButton" id="East" ng-show="selectingLoop" 
+                     ng-click="selectLoop('East')">East Loop</div>
+                <h1 class="selectable" ng-click="toggleSelectCopilot()">Select Copilot</h1>
+                <ul ng-show="selectingCopilot">
+                    <li class="startButton brotherOptions" ng-repeat="brother in brothers |
+                        orderBy:'name'" ng-click="selectCopilot(brother.kerberos)" 
+                        id="{{brother.kerberos}}">
+                        {{brother.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--Driving Block-->
+        <div class="spacer driving" ng-show="driving" ng-click="closeMenu()">
+            <ul>
+                <li class="option drivingOptions" ng-repeat="location in route">
+                    <img ng-src="{{dot($first, $last, location)}}" class="optionDot">
+                    <p ng-class="{'complete': location.done}"> {{location.location}}</p>
+                    <ul ng-show="hasRequests(location.requests)">
+                        <li ng-repeat="rushee in location.requests">
+                            <img ng-src="img/dots/line.png" class="optionDot">
+                            <div class="rusheeOptions">
+                                • {{rushee.name}} - 
+                                <a href="tel:{{rushee.cell}}">{{rushee.cell}}</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <!--No Access Block-->
+        <div class="stuff notDriving" ng-show="noAccess()" ng-click="closeMenu()">
+            <div class="alert" ng-click="startRoute()"> 
+                You are not an authorized driver.
+            </div>
+        </div>
+        
+        <!--Footers-->
+        <!--Initiating Footer-->
+        <div class="footer" ng-show="initiating">
+            <div class="request" ng-click="startRoute()" ng-show="formComplete()"> 
+                Start Route
+            </div>
+        </div>
+        <!--Driving Footers-->
+        <div class="footer" ng-show="driving">
+            <!--En Route Footer-->
+            <div class="optionsContainer" ng-show="enRoute">
+                <img class="drivingButton" src="img/yesButton.png" ng-click="next()">
+                <div class="drivingLocation"> {{currentLocation}} </div>
+                <img class="drivingButton" src="img/noButton.png" ng-click="end()">
+            </div>
+            <!--Finished Route Footer-->
+            <div class="request selectable" ng-show="!enRoute" ng-click="done()"> 
+                Done! 
+            </div>
+        </div>
+    </body>
+</html>

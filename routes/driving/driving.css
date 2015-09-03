@@ -1,0 +1,116 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 17, 2014, 10:24:25 AM
+    Author     : caleblin
+*/
+p{
+    display:inline-block;
+}
+.driving{
+    margin-top:0.5em;
+}
+
+.drivingOptions{
+    width:80%;
+}
+
+.notDriving{
+    width:100%;
+    text-align:center;
+}
+
+.startButton{
+    width:45%;
+    padding:0.2em;
+    margin:0 auto;
+    margin-top:60%;
+    display:inline-block;
+    color:gray;
+    background-color:rgba(204,204,204,0.2);
+    border:solid 0.1em;
+    border-color: #C6C6C6;
+    border-radius:0.5em;
+    font-size:1.6em;
+    cursor:pointer;
+}
+
+.loopButton{
+    width:30%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.selected{
+    color:green;
+    background-color:rgba(0,255,0,0.2);
+}
+
+.brotherOptions{
+    width:45%;
+    margin:0.17em;
+    font-size:1.2em;
+}
+
+.rusheeOptions{
+    display:inline;
+    margin-left:1em;
+}
+
+.infoTitle{
+    display:block;
+}
+
+.alert{
+    width:100%;
+    padding:0.2em;
+    margin:0 auto;
+    margin-top:60%;
+    display:inline-block;
+    color:gray;
+    background-color:rgba(204,204,204,0.2);
+    border:solid 0.1em;
+    border-color: #C6C6C6;
+    font-size:2em;
+}
+
+.drivingLocation{
+    cursor:default;
+    display:inline-block;
+    width:8em;
+    text-align:center;
+    margin-top:0.4em;
+    font-size:1.8em;
+    font-weight:100;
+}
+
+.drivingButton{
+    padding:1em;
+    margin-top:-1em;
+    height:2em;
+    cursor:pointer;
+    display:inline;
+}
+
+.complete{
+    text-decoration:line-through;
+    
+}
+
+.incomplete{
+    color:gray;
+}
+
+.footer{
+    width:100%;
+    text-align:center;
+}
+.optionsContainer{
+    display:inline-block;
+    width:auto;
+    margin:0 auto;
+    text-align:center;
+}

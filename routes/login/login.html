@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="meBox">
+            <h1 class="meHeader">Login</h1>
+            <div class='loginTabs'>
+                <div ng-click="toggleLogin(true)" ng-class="{'loginSelected': isBrother}"class="loginButton leftButton">Brother</div> 
+                <div ng-click="toggleLogin(false)" ng-class="{'loginSelected': !isBrother}" class="loginButton rightButton">Rushee</div> 
+            </div>
+            <div ng-show="isBrother">
+                <form ng-submit="submitLogin(name, password)">
+                    <div class='loginHelp'>Enter your delta number and password</div>
+                    <h1 class="meHeader meSmall">Delta</h1>
+                    <input pattern=".{4}" type="text" ng-model="name" class="meInput"/><br>
+                    <h1 class="meHeader meSmall">Password</h1>
+                    <input type="password" ng-model="password" class="meInput" /><br>
+                    <div ng-show="failedLogin" class='loginError'>{{failMessage}}</div>
+                    <button type="submit" class="meButton">Log In</button>
+                </form>
+            </div>
+            <div ng-show="!isBrother">
+                <form ng-submit="submitLogin(name, contact)">
+                    <div class='loginHelp'>Registering a name and phone number will allow us to contact you if you request a pickup.</div>
+                    <h1 class="meHeader meSmall">Name</h1>
+                    <input pattern=".{3,}" type="text" ng-model="name" class="meInput"/><br>
+                    <h1 class="meHeader meSmall">Phone Number</h1>
+                    <input pattern=".{10,}" type="tel" ng-model="contact" class="meInput" /><br>
+                    <div ng-show="failedLogin" class='loginError'>{{failMessage}}</div>
+                    <button type="submit" class="meButton">Register</button>
+                </form>
+            </div>            
+        </div>
+    </body>
+</html>

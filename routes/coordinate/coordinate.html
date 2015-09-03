@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!--REQUESTS-->
+        <div class="spacer" ng-show="!requesting">
+            <div class='centeredContainer'>
+                <h1 class='total' ng-click="showWest()">West: {{totals.West}}</h1>
+                <h1 class='total' ng-click="showEast()">East: {{totals.East}}</h1>
+                <h1 class='total'>All: {{totals.all}}</h1>
+            </div>
+            <ul>
+                <li class="coordinateOptions" ng-repeat="location in requests">
+                    <h1 class='optionHeader'>{{location.location}}</h1>
+                    <img src="img/plusButtonBlack.png" class="addRusheeButton" ng-click="addRushee(location)">
+                    <ul>
+                        <li class="rusheeList" ng-repeat="rushee in location.requests">
+                            <!-- <div class="rusheeCoordinateOptions"> -->
+                                • {{rushee.name}} - 
+                                <a href="tel:{{rushee.cell}}">{{rushee.cell}}</a>
+                                <img src="img/xButtonBlack.png" class="addRusheeButton" 
+                                ng-click="removeRushee(location, rushee.name)">
+                            <!-- </div> -->
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--Send Van Block-->
+        <div class="spacer sendVan" ng-show="requesting">
+            <div class="startOptions"> 
+                <h1 class="selectable">Select Route</h1>
+                <div class="startButton loopButton" id="West" ng-click="selectLoop('West')">West Loop</div>
+                <div class="startButton loopButton" id="East" ng-click="selectLoop('East')">East Loop</div>
+                <h1 class="selectable">Select Driver</h1>
+                <ul>
+                    <li class="startButton brotherOptions" ng-repeat="driver in drivers |
+                        orderBy:'name'" ng-click="selectDriver(driver)" 
+                        id="{{driver.kerberos}}">
+                        {{driver.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="request" ng-click="initiateSend()" ng-show="!requesting">Send Van</div>
+            <div class="request" ng-click="send()" ng-show="requesting">Send</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="txiRushApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TXI Rush App 2014</title>
+  <!-- <meta name="description" content=""> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/sidebar.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="routes/events/events.css"/>
+  <link rel="stylesheet" href="routes/vanTracker/vanTracker.css"/>
+  <link rel="stylesheet" href="routes/brothers/brothers.css"/>
+  <link rel="stylesheet" href="routes/vanRequest/vanRequest.css"/>
+  <link rel="stylesheet" href="routes/driving/driving.css"/>
+  <link rel="stylesheet" href="routes/coordinate/coordinate.css"/>
+  <link rel="stylesheet" href="routes/me/me.css"/>
+  <link rel="stylesheet" href="routes/login/login.css"/>
+</head>
+<body ng-controller="AppController">
+  <!-- SIDE BAR -->
+  <nav class='sidebar animateAll' ng-class="{'sidebarHidden': !showmenu}" ng-cloak>
+    <div ng-show="showmenu">
+      <a ng-click="toggleMenu()" href="#/events">Events</a>
+      <a ng-click="toggleMenu()" href="#/vantracker">Van Tracker</a>
+      <a ng-click="toggleMenu()" href="#/brothers">Brothers</a>
+      <a ng-click="toggleMenu()" ng-show="notLogged" href="#/login">Login</a>
+      <a ng-click="toggleMenu()" ng-show="!notLogged" href="#/me">Me</a>
+      <a ng-click="toggleMenu()" ng-show="isBrother" href="#/driving" >Drive</a>
+      <a ng-click="toggleMenu()" ng-show="isCoordinator" href="#/coordinate">Coordinate</a>
+      <a ng-click="logout()" ng-show="!notLogged" href="#/login">Logout</a>
+    </div>
+  </nav>
+  <img src="img/loading_wheel.gif" id="loader">
+
+  <!-- MAIN WINDOW -->
+  <div ng-class="{'slideAll animateAll': showmenu, 'all animateAll': !showmenu}">
+    <!-- NAV BAR -->
+    <div ng-view class="window" ng-click="closeMenu()" ng-cloak></div>
+    <div class="navbar" ng-cloak>
+        <img id="menubutton" ng-class="{'rotated': showmenu, 'notRotated': !showmenu}" ng-click="toggleMenu()" ng-show='!requesting' src="img/MenuButton.png">
+        <a href={{returnPath}} ng-click="back()" ng-cloak>
+            <img id="menubutton" ng-show='requesting' src="img/WhiteArrowRound.png">
+        </a>
+        <h1 class="title">{{$route.current.scope.pageName}}</h1>
+    </div>
+    
+  </div>
+
+  <!-- In production use: -->
+  <script src="lib/jquery-1.11.3.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="routes/brothers/brotherController.js"></script>
+  <script src="routes/events/eventController.js"></script>
+  <script src="routes/vanTracker/vanController.js"></script>
+  <script src="routes/vanRequest/requestController.js"></script>
+  <script src="routes/driving/drivingController.js"></script>
+  <script src="routes/coordinate/coordinateController.js"></script>
+  <script src="routes/me/meController.js"></script>
+  <script src="routes/login/loginController.js"></script>
+</body>
+</html>

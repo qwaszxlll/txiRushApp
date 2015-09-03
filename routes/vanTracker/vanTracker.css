@@ -1,0 +1,100 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 14, 2014, 2:21:39 AM
+    Author     : caleblin
+*/
+.noVanAlert{
+    margin-top:45%;
+    margin-left:10%;
+    background:none;
+    border:none;
+    color: #363537;
+    font-size:1.2em;
+    width:80%;
+}
+.vanh1{
+    margin:0;
+    margin-top:-0.4em;
+    margin-left: 4em;
+    margin-right:2em;
+    background:none;
+    border:none;
+    color: #363537;
+    font-size:1.4em;
+    padding: 0.8em;
+    padding-left: 0.3em;
+}
+
+.vanh2{
+    margin:0;
+    margin-top:-1em;
+    margin-left: 4.5em;
+    margin-right:2em;
+    padding: 0;
+    padding-left: 0.5em;
+    padding-bottom:0.1em;
+    background:none;
+    color: #606062;
+    font-size:1.2em;
+    font-weight:100;
+    border-bottom-style:solid;
+    border-width: 0.1em;
+    border-color: #C6C6C6;
+}
+
+.vanp{
+    margin:0;
+    margin-top:0em;
+    margin-bottom: 0.5em;
+    margin-left: 0.1em;
+    font-size:1.2em;
+    color: #606062;
+}
+
+.vanIcon{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    height:4em;
+    float:left;
+    display:block;
+}
+
+.driver{
+    margin-top:-2.5em;
+    margin-right:2em;
+    padding:0.3em;
+    padding-left:1.2em;
+    padding-right:1.2em;
+    border-radius: 2em;
+    border-style:solid;
+    border-width: 0.1em;
+    border-color: #C6C6C6;
+    float:right;
+    width:auto;
+    text-align:right;
+    font-weight:100;
+    font-size:1.2em;
+    color:gray;
+    cursor:pointer;
+}
+
+.place{
+    padding:0;
+    margin:0;
+    margin-top:-4px;
+    display: inline-block;
+    height:3em;
+    width:100%;
+    position:relative;
+}
+
+.dot{
+    height:3em;
+    margin-left: 8em;
+    margin-right: 1em;
+}

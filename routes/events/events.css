@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 9, 2014, 11:49:44 PM
+    Author     : caleblin
+*/
+.event{
+    padding:0;
+    padding-top: 0.8em;
+    margin:0;
+    display: inline-block;
+    width:100%;
+    border-top-style:solid;
+    border-width: 0.1em;
+    border-color: #C6C6C6;
+}
+
+.eventIcon{
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0;
+    height:2.8em;
+    float:left;
+    display:block;
+}
+
+.eventDetails{
+    margin-top:-0.5em;
+    margin-bottom:0.5em;
+}
+
+.smallIcon{
+    margin-top:1.2em;
+    margin-right: 1em;
+    float: right;
+    height:1em;
+    cursor:pointer;
+}
+.info{
+    float:left;
+    display:block;
+    width:auto;
+}
+
+.popup{
+    position:absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: rgba(56,68,85,1);
+    overflow:hidden;
+    text-align: center;
+}
+
+.popupTitle{
+    margin:0;
+    margin-left:-0.4em;
+    margin-top:0.5em;
+}
+
+.xButton{
+    margin-top: -3.3em;
+    margin-right: 2em;
+    height: 3em;
+    float: right;
+    cursor: pointer;
+}
+
+.popUpField{
+    margin-top: 1.4em;
+    margin-left: auto;
+    margin-right: auto;
+    height:75%;
+    width: 90%;
+    background: white;
+    border-radius:0.5em;
+    overflow:hidden;
+}
+
+.picContainer{
+    height:50%;
+    overflow:hidden;
+    position:relative;
+}
+
+.eventPic{
+    width:101%;
+}
+
+.eventName{
+    background: rgba(0,0,0,0.8);
+    padding:0.4em;
+    width: 100%;
+    color:white;
+    font-size:1.7em;
+    font-weight:100;
+    text-align: center;
+    position:absolute;
+    bottom:0;
+    box-sizing: border-box;
+}
+
+.eventDescription{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin-top:0em;
+    padding:0.8em;
+    font-size:1em;
+    font-weight: 100;
+    color: #606062;
+}
