@@ -4,6 +4,8 @@ angular.module('txiRushApp')
   .controller('requestController', ['$scope', '$rootScope', '$http', 'parseLogic', function($scope, $rootScope, $http, parseLogic) {
         $scope.pageName = "Pick Me Up";
         $rootScope.requesting=true;
+        $rootScope.showFooter = false;
+        $rootScope.canRefresh = false;
         $scope.selectedLocation = 'None';
         $scope.locations = ["Maseeh","Mccormick","Baker","Burton Conner","Macgregor","New House","Next House","Simmons","Student Center","77 Mass Ave","Stata @ Vassar","Media Lab @ Ames"];
         

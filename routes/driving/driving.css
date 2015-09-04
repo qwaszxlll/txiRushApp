@@ -14,10 +14,6 @@ p{
     margin-top:0.5em;
 }
 
-.drivingOptions{
-    width:80%;
-}
-
 .notDriving{
     width:100%;
     text-align:center;
@@ -55,11 +51,6 @@ p{
     font-size:1.2em;
 }
 
-.rusheeOptions{
-    display:inline;
-    margin-left:1em;
-}
-
 .infoTitle{
     display:block;
 }
@@ -77,22 +68,39 @@ p{
     font-size:2em;
 }
 
-.drivingLocation{
-    cursor:default;
+.optionsContainer{
     display:inline-block;
-    width:8em;
+    width:auto;
+    margin:0 auto;
     text-align:center;
-    margin-top:0.4em;
+    vertical-align: top;
+}
+
+.drivingLocation{
+    display:inline-block;
+    width: auto;
+    padding:0.5em;
     font-size:1.8em;
     font-weight:100;
+    vertical-align: top;
 }
 
 .drivingButton{
+    position:absolute;
+    bottom: 0;
     padding:1em;
-    margin-top:-1em;
     height:2em;
     cursor:pointer;
     display:inline;
+}
+
+.optionsContainer .left{
+    left:0;
+    margin-left: 1em;
+}
+.optionsContainer .right{
+    right:0;
+    margin-right: 1em;
 }
 
 .complete{
@@ -106,11 +114,5 @@ p{
 
 .footer{
     width:100%;
-    text-align:center;
-}
-.optionsContainer{
-    display:inline-block;
-    width:auto;
-    margin:0 auto;
     text-align:center;
 }

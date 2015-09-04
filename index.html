@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="css/sidebar.css"/>
   <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/dots.css"/>
   <link rel="stylesheet" href="routes/events/events.css"/>
   <link rel="stylesheet" href="routes/vanTracker/vanTracker.css"/>
   <link rel="stylesheet" href="routes/brothers/brothers.css"/>
@@ -32,21 +33,31 @@
       <a ng-click="logout()" ng-show="!notLogged" href="#/login">Logout</a>
     </div>
   </nav>
-  <img src="img/loading_wheel.gif" id="loader">
 
   <!-- MAIN WINDOW -->
-  <div ng-class="{'slideAll animateAll': showmenu, 'all animateAll': !showmenu}">
+  <div ng-show="configComplete" ng-class="{'slideAll animateAll': showmenu, 'all animateAll': !showmenu}">
     <!-- NAV BAR -->
     <div ng-view class="window" ng-click="closeMenu()" ng-cloak></div>
-    <div class="navbar" ng-cloak>
+    <div ng-show="!hasPopup" class="navbar" ng-cloak>
         <img id="menubutton" ng-class="{'rotated': showmenu, 'notRotated': !showmenu}" ng-click="toggleMenu()" ng-show='!requesting' src="img/MenuButton.png">
         <a href={{returnPath}} ng-click="back()" ng-cloak>
             <img id="menubutton" ng-show='requesting' src="img/WhiteArrowRound.png">
         </a>
         <h1 class="title">{{$route.current.scope.pageName}}</h1>
+        <img ng-click="refresh()" ng-show="canRefresh" class="refreshBtn" src="img/refreshBtn.png"></div>
     </div>
     
+    <!-- LOADER -->
+    <div id='loader' class='loaderMask'>
+        <img class='loaderWheel' src="img/loading_wheel.gif">
+    </div>
+
+    <div ng-show="showFooter && !hasPopup" class="footer">
+        <a href="#/vanRequest" ng-click="setPath('#/vantracker')" ng-click='stopData()'><div class="request"> Pick Me Up! </div></a>
+    </div>
   </div>
+  
+  
 
   <!-- In production use: -->
   <script src="lib/jquery-1.11.3.min.js"></script>
@@ -58,6 +69,7 @@
   <script src="js/services.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="services/parseService.js"></script>
   <script src="routes/brothers/brotherController.js"></script>
   <script src="routes/events/eventController.js"></script>
   <script src="routes/vanTracker/vanController.js"></script>

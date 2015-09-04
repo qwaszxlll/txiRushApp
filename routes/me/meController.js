@@ -4,6 +4,9 @@ angular.module('txiRushApp')
   .controller('meController', ['$scope', '$rootScope', '$http','$interval', '$location',
     function($scope, $rootScope, $http, $interval, $location) {
         console.log("STARTING ME PAGE: ", $rootScope.me);
+        $rootScope.showFooter = false;
+        $rootScope.canRefresh = false;
+
         if ($rootScope.notLogged){
             $location.path("/login");
         } else {

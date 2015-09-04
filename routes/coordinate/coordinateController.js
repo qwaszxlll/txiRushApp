@@ -11,6 +11,8 @@ angular.module('txiRushApp')
         if ($rootScope.notLogged || !$rootScope.isCoordinator){
             $location.path("/login");
         }
+        $rootScope.showFooter = false;
+        $rootScope.canRefresh = false;
 
         $scope.pageName = "Coordinate";
         $scope.newRequest = {

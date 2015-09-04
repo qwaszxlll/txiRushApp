@@ -14,28 +14,6 @@ and open the template in the editor.
     width:100%;
 }
 
-.locationText{
-    display:inline-block;
-    position:absolute;
-    top: 0;
-    margin-top: 1em;
-}
-
-.option{
-    margin-left:auto;
-    margin-right:auto;
-    width:15em;
-    display:block;
-    position:relative;
-}
-
-.optionDot{
-    height:3em;
-    margin-left: 1em;
-    margin-right: 1em;
-    display:inline-block;
-}
-
 .headnote{
     text-align:center;
     width:90%;

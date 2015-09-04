@@ -4,6 +4,8 @@ angular.module('txiRushApp')
   .controller('brothersController', ['$scope', '$http', '$rootScope', 
   function($scope, $http, $rootScope) {
         $scope.pageName = "Brothers";
+        $rootScope.showFooter = true;
+        $rootScope.canRefresh = false;
         
     $scope.getBrotherImg = function(delta){
         return 'img/brothers/'+delta+'.jpg';

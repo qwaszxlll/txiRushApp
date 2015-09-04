@@ -7,6 +7,7 @@ angular.module('txiRushApp')
             $location.path("/me");
         }
 
+        $rootScope.showFooter = false;
         $scope.pageName = "Login";
         $scope.isBrother = false;
         $scope.failedLogin = false;
@@ -22,7 +23,6 @@ angular.module('txiRushApp')
                 passwordPromise.equalTo("password", field);
                 passwordPromise.find({
                     success : function(results){
-                        console.log("PASSWORD PROMISE SUCCESS: ", results)
                         if (results.length > 0){
                             $rootScope.isBrother = true;
                             $rootScope.notLogged = false;

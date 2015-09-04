@@ -22,8 +22,8 @@ and open the template in the editor.
                 <h1 class="selectable" ng-click="toggleSelectCopilot()">Select Copilot</h1>
                 <ul ng-show="selectingCopilot">
                     <li class="startButton brotherOptions" ng-repeat="brother in brothers |
-                        orderBy:'name'" ng-click="selectCopilot(brother.kerberos)" 
-                        id="{{brother.kerberos}}">
+                        orderBy:'delta'" ng-click="selectCopilot(brother.id, $index)" 
+                        id="{{brother.id}}">
                         {{brother.name}}
                     </li>
                 </ul>
@@ -31,29 +31,22 @@ and open the template in the editor.
         </div>
         
         <!--Driving Block-->
-        <div class="spacer driving" ng-show="driving" ng-click="closeMenu()">
+        <div class="spacer driving" ng-show="isDriving" ng-click="closeMenu()">
             <ul>
-                <li class="option drivingOptions" ng-repeat="location in route">
+                <li class="option drivingOptions" ng-repeat="location in currentRoute">
                     <img ng-src="{{dot($first, $last, location)}}" class="optionDot">
-                    <p ng-class="{'complete': location.done}"> {{location.location}}</p>
-                    <ul ng-show="hasRequests(location.requests)">
-                        <li ng-repeat="rushee in location.requests">
+                    <p class="locationText" ng-class="{'complete': locationComplete($index)}"> {{location}}</p>
+                    <ul ng-show="hasRequests(location)">
+                        <li class="contactOption" ng-repeat="rushee in requests[location]">
                             <img ng-src="img/dots/line.png" class="optionDot">
-                            <div class="rusheeOptions">
-                                • {{rushee.name}} - 
-                                <a href="tel:{{rushee.cell}}">{{rushee.cell}}</a>
+                            <div class="locationText">
+                                • {{rushee.get("name")}} - 
+                                <a href="tel:{{rushee.cell}}">{{rushee.get("contact")}}</a>
                             </div>
                         </li>
                     </ul>
                 </li>
             </ul>
-        </div>
-        
-        <!--No Access Block-->
-        <div class="stuff notDriving" ng-show="noAccess()" ng-click="closeMenu()">
-            <div class="alert" ng-click="startRoute()"> 
-                You are not an authorized driver.
-            </div>
         </div>
         
         <!--Footers-->
@@ -64,12 +57,12 @@ and open the template in the editor.
             </div>
         </div>
         <!--Driving Footers-->
-        <div class="footer" ng-show="driving">
+        <div class="footer" ng-show="isDriving">
             <!--En Route Footer-->
             <div class="optionsContainer" ng-show="enRoute">
-                <img class="drivingButton" src="img/yesButton.png" ng-click="next()">
-                <div class="drivingLocation"> {{currentLocation}} </div>
-                <img class="drivingButton" src="img/noButton.png" ng-click="end()">
+                <img class="drivingButton left" src="img/yesButton.png" ng-click="next()">
+                <div class="drivingLocation"> {{currentRoute[currentVan.get("location")]}} </div>
+                <img class="drivingButton right" src="img/noButton.png" ng-click="back()">
             </div>
             <!--Finished Route Footer-->
             <div class="request selectable" ng-show="!enRoute" ng-click="done()"> 

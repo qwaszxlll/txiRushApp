@@ -1,0 +1,45 @@
+.place{
+    padding:0;
+    margin:0;
+    margin-top:-4px;
+    display: inline-block;
+    height:3em;
+    width:100%;
+    position:relative;
+}
+.option{
+	margin-top:-4px;
+    margin-left:auto;
+    margin-right:auto;
+    width:15em;
+    display:block;
+    position:relative;
+}
+.drivingOptions{
+    width:80%;
+}
+.optionDot{
+    height:3em;
+    margin-left: 1em;
+    margin-right: 1em;
+    display:inline-block;
+}
+.dot{
+    height:3em;
+    margin-left: 8em;
+    margin-right: 1em;
+}
+.locationText{
+    display:inline-block;
+    position:absolute;
+    top: 0;
+    margin-top: 1em;
+}
+.contactOption{
+	margin-top:-4px;
+	position:relative;
+}
+.rusheeOptions{
+    display:inline;
+    margin-left:1em;
+}

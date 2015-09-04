@@ -95,6 +95,17 @@ a{
     float: left;
 }
 
+.refreshBtn{
+    position:absolute;
+    top:0.5em;
+    right:1em;
+    height:3em;
+}
+
+.refreshBtn:active{
+    opacity:0.7;
+}
+
 .rotated {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -149,9 +160,19 @@ a{
     text-align:center;
 }
 
-.js #loader { 
+.loaderMask{
+    background: white;
+    position: fixed;
+    opacity:0.4;
+    top:4em;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.loaderWheel { 
     display: inline-block; 
-    position: absolute; 
+    position: fixed; 
     left:48%;
     margin-left:-1em;
     top: 40%; 

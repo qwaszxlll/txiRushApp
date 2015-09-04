@@ -50,17 +50,27 @@ config(['$routeProvider', function($routeProvider) {
 
 app.controller("AppController", function($scope, $rootScope, $http, $route, $location, parseLogic){
 
-    //default the menu to not show
+    //Set Default Visibility Variables
     $rootScope.showmenu=false;
     $rootScope.requesting=false;
     $rootScope.notLogged = true;
     $rootScope.isBrother = false;
-    $scope.$route=$route;
-    $scope.$location = $location;
+    $rootScope.isCoordinator = false;
+    $rootScope.isDriving = false;
+    $rootScope.canRefresh = false;
+    $rootScope.showFooter = true;
+    $rootScope.configComplete = false;
+    
+    $rootScope.requests = {};
+    $rootScope.routes = {};
+    $rootScope.vans = [];
     $rootScope.me = {
           name : '',
           contact : ''
         }
+
+    $scope.$route=$route;
+    $scope.$location = $location;
 
     $rootScope.serve = function(destination){
       // return "https://rushtxi.mit.edu/app/api/" + destination;
@@ -69,25 +79,18 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
 
     Parse.initialize('ccpnOank7Z9Zx9bM2cKx4bKfY2aXpz9YbsqGqISv', 'DsyunChoW6REhbite7qHhJDMu95gCedSvpIGkMwB');
     $("#loader").show();
-    parseLogic.getBrothers($scope);
-    parseLogic.getEvents($scope);
+    parseLogic.getBrothers();
+    parseLogic.getEvents();
+    parseLogic.getVans();
+    parseLogic.getRoutes();
+    parseLogic.restoreUser();
 
-    $rootScope.currentUser = Parse.User.current();
-    if ($rootScope.currentUser){
-        console.log("RELOAD CURRENT USER DATA: ", Parse.User.current());
-        $rootScope.notLogged = false;
-        $rootScope.isBrother = $rootScope.currentUser.get("isBrother");
-        $rootScope.isCoordinator = $rootScope.currentUser.get("isCoordinator");
-        
-        $rootScope.me = {
-          name : $rootScope.currentUser.get("username"),
-          contact : $rootScope.currentUser.get("contact")
-        }
-    }
 
     $rootScope.logout = function(){
         Parse.User.logOut();
         $rootScope.notLogged = true;
+        $rootScope.isBrother = false;
+        $rootScope.isCoordinator = false;
         $rootScope.showmenu=($rootScope.showmenu) ? false : true;
     }
 
@@ -110,6 +113,11 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
     $rootScope.setPath = function(path){
         $rootScope.returnPath=path;
     };
+
+    $rootScope.refresh = function(){
+        parseLogic.getVans();
+        parseLogic.getRequests();
+    }
 
     $("#window").ready(function() {
             // Animate loader off screen

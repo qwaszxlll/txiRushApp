@@ -7,6 +7,8 @@ angular.module('txiRushApp')
     //Directive for testing if an event is out of house or not
     $scope.pageName = "Events";
     $rootScope.requesting = false;
+    $rootScope.showFooter = true;
+    $rootScope.canRefresh = false;
 
     $scope.isOutOfHouse = function(location){
         if (location == 'TXI'){
@@ -19,9 +21,9 @@ angular.module('txiRushApp')
     
     //Directives for controlling popups
     $scope.currentEvent='';
-    $scope.hasPopup=false;
+    $rootScope.hasPopup=false;
     $scope.openPopup = function(event){
-        $scope.hasPopup=true;
+        $rootScope.hasPopup=true;
         $scope.scroll=document.body.scrollTop;
         $('html, body').css({
         'overflow': 'hidden',
@@ -30,7 +32,7 @@ angular.module('txiRushApp')
         $scope.currentEvent=event;
     };
     $scope.closePopup = function(){
-        $scope.hasPopup=false;
+        $rootScope.hasPopup=false;
         $('html, body').css({
         'overflow': 'auto',
         'height': 'auto'

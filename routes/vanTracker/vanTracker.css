@@ -82,19 +82,3 @@ and open the template in the editor.
     color:gray;
     cursor:pointer;
 }
-
-.place{
-    padding:0;
-    margin:0;
-    margin-top:-4px;
-    display: inline-block;
-    height:3em;
-    width:100%;
-    position:relative;
-}
-
-.dot{
-    height:3em;
-    margin-left: 8em;
-    margin-right: 1em;
-}

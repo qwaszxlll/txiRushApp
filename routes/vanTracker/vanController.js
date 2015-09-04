@@ -5,25 +5,28 @@ angular.module('txiRushApp')
     function($scope, $rootScope, $http, $interval, $route, parseLogic) {
         $scope.pageName = "Van Tracker";
         $scope.showContact=false;
-
+        $rootScope.canRefresh = true;
+        $rootScope.showFooter = true;
+        // $scope.vans = $rootScope.vans;
     // Poll every second
-        var vanPromise;
-        $scope.vans = [];
-        $scope.poll = function() {
-        $("#loader").show();
-        vanPromise = $interval(function() {
-          if ($route.current.scope.pageName=='Van Tracker') {
-            parseLogic.getVans($scope);
-            // var promise = $http.get($rootScope.serve("vans"));
-            // promise.success(function(data){
-            //     $scope.vans = data.vans;
-            //     $("#loader").hide();
-            // });
-          } else {
-            $scope.stopPoll();
-          }
-        }, 1000);
-      };
+      //   var vanPromise;
+      //   $scope.vans = [];
+      //   $scope.poll = function() {
+      //   $("#loader").show();
+      //   vanPromise = $interval(function() {
+      //     if ($route.current.scope.pageName=='Van Tracker') {
+      //       parseLogic.getVans();
+              
+      //       // var promise = $http.get($rootScope.serve("vans"));
+      //       // promise.success(function(data){
+      //       //     $scope.vans = data.vans;
+      //       //     $("#loader").hide();
+      //       // });
+      //     } else {
+      //       $scope.stopPoll();
+      //     }
+      //   }, 1000);
+      // };
 
       $scope.stopPoll = function() {
         if (angular.isDefined(vanPromise)) {
@@ -32,7 +35,7 @@ angular.module('txiRushApp')
         }
       };
 
-      $scope.poll();       
+      // $scope.poll();       
 
       $scope.seeNumber = function(){
         $scope.showContact = true;
@@ -75,7 +78,7 @@ angular.module('txiRushApp')
         };
 
         $scope.hasVans = function(){
-          if($scope.vans==undefined || $scope.vans.length>0){
+          if($rootScope.vans==undefined || $rootScope.vans.length>0){
             return true;
           }
           return false;
