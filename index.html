@@ -21,7 +21,7 @@
 </head>
 <body ng-controller="AppController">
   <!-- SIDE BAR -->
-  <nav class='sidebar animateAll' ng-class="{'sidebarHidden': !showmenu}" ng-cloak>
+  <nav class='sidebar animateAll' class="fixed" ng-class="{'sidebarHidden': !showmenu}" ng-cloak>
     <div ng-show="showmenu">
       <a ng-click="toggleMenu()" href="#/events">Events</a>
       <a ng-click="toggleMenu()" href="#/vantracker">Van Tracker</a>
@@ -40,7 +40,7 @@
     <div ng-view class="window" ng-cloak></div>
     <!-- NAV BAR -->
     <div ng-show="!hasPopup" class="navbar" ng-cloak>
-        <img id="menubutton" ng-class="{'rotated': showmenu, 'notRotated': !showmenu}" ng-click="toggleMenu()" ng-show='!requesting' src="img/MenuButton.png">
+        <img id="menubutton" ng-class="{'rotated': showmenu, 'notRotated': !showmenu, 'slideAll': showmenu}" ng-click="toggleMenu()" ng-show='!requesting' src="img/MenuButton.png">
         <img id="menubutton" ng-click="back()" ng-show='requesting' src="img/WhiteArrowRound.png">
         <h1 class="title">{{$route.current.scope.pageName}}</h1>
         <img ng-click="refresh()" ng-show="canRefresh" class="refreshBtn" src="img/refreshBtn.png"></div>
