@@ -8,6 +8,7 @@ and open the template in the editor.
     Author     : caleblin
 */
 
+
 /*@media screen and (max-width: 600px){
     .backgroundGraphics{    
         background: url(../../img/txiPics/txiCrestBlurred.png) no-repeat top center fixed; 
@@ -21,11 +22,10 @@ and open the template in the editor.
         overflow:scroll;
         overflow-x: visible;
     }
-}
-@media screen and (min-width: 600px){
+}*/
+/*@media screen and (min-width: 600px){
     .backgroundGraphics{
         background: URL(../../img/txiPics/txiCrestBlurred.png) no-repeat top center fixed;
-        /*overflow:hidden;*/
         width:100%;
         height:100%;
     }
@@ -33,10 +33,9 @@ and open the template in the editor.
 
 .year{
     background-color:rgba(255,255,255,0.85);
-    margin-bottom:0.2em;
     padding-left:4%;
-    padding-bottom:1.5em;
-    padding-top:1.5em;
+    margin-bottom:1.5em;
+    margin-top:1.5em;
 }
 
 .headerPic{
@@ -60,6 +59,7 @@ and open the template in the editor.
 .brotherInfo{
     float:right;
     vertical-align: center;
+    margin-top:0.5em;
     margin-right:4%;
     width:61%;
     height:8em;
