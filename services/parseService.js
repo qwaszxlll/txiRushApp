@@ -200,9 +200,9 @@ app.factory('parseLogic', function($rootScope, $location){
 			if ($rootScope.lastRequest){
 				$rootScope.lastRequest.destroy();
 			}
-			$rootScope.me.contact = prompt("[Optional] Enter your Mobile Number");
+			$rootScope.me.contact = prompt("[Optional] Enter your Mobile Number \n (You can also login to save your information)");
 
-			service.sendNewRequest(location, name, $rootScope.me.contact);
+			service.sendNewRequest(location, name, parseInt($rootScope.me.contact));
 		}			
 	};
 
