@@ -78,7 +78,8 @@ a{
 
 .navbar{
     position: fixed;
-    left:inherit;
+    left:0;
+    margin-left:inherit;
     top:0;
     width:100%;
     height:4em;

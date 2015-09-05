@@ -35,9 +35,10 @@
   </nav>
 
   <!-- MAIN WINDOW -->
-  <div ng-show="configComplete" ng-class="{'slideAll animateAll': showmenu, 'all animateAll': !showmenu}">
+  <div ng-show="configComplete" ng-class="{'slideAll': showmenu, 'all': !showmenu}">
+    <!-- VIEWS -->
+    <div ng-view class="window" ng-cloak></div>
     <!-- NAV BAR -->
-    <div ng-view class="window" ng-click="closeMenu()" ng-cloak></div>
     <div ng-show="!hasPopup" class="navbar" ng-cloak>
         <img id="menubutton" ng-class="{'rotated': showmenu, 'notRotated': !showmenu}" ng-click="toggleMenu()" ng-show='!requesting' src="img/MenuButton.png">
         <img id="menubutton" ng-click="back()" ng-show='requesting' src="img/WhiteArrowRound.png">
@@ -49,11 +50,13 @@
     <div id='loader' class='loaderMask'>
         <img class='loaderWheel' src="img/loading_wheel.gif">
     </div>
-
+    <!-- FOOTER -->
     <div ng-show="showFooter && !hasPopup" class="footer">
         <a href="#/vanRequest" ng-click="setPath('/#' + $location.path())" ng-click='stopData()'><div class="request"> Pick Me Up! </div></a>
     </div>
   </div>
+  <!-- CLICK AREA TO HIDE MENU -->
+  <div class="window slideAll" ng-click="closeMenu()" ng-show="showmenu"></div>
   
   
 
