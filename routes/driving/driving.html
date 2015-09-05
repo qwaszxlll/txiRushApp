@@ -53,22 +53,18 @@ and open the template in the editor.
         
         <!--Footers-->
         <!--Initiating Footer-->
-        <div class="footer" ng-show="initiating">
+        <div class="footer" ng-show="initiating" ng-class="{'slideAll': showmenu}">
             <div class="request" ng-click="startRoute()" ng-show="formComplete()"> 
                 Start Route
             </div>
         </div>
         <!--Driving Footers-->
-        <div class="footer" ng-show="isDriving">
+        <div class="footer" ng-show="isDriving" ng-class="{'slideAll': showmenu}">
             <!--En Route Footer-->
             <div class="optionsContainer" ng-show="enRoute">
                 <img class="drivingButton left" src="img/yesButton.png" ng-click="next()">
                 <div class="drivingLocation"> {{currentRoute[currentVan.get("location")]}} </div>
                 <img class="drivingButton right" src="img/noButton.png" ng-click="back()">
-            </div>
-            <!--Finished Route Footer-->
-            <div class="request selectable" ng-show="!enRoute" ng-click="done()"> 
-                Done! 
             </div>
         </div>
     </body>

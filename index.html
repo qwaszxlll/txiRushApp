@@ -51,7 +51,7 @@
         <img class='loaderWheel' src="img/loading_wheel.gif">
     </div>
     <!-- FOOTER -->
-    <div ng-show="showFooter && !hasPopup" class="footer">
+    <div ng-show="showFooter && !hasPopup" class="footer" ng-class="{'slideAll': showmenu}">
         <a href="#/vanRequest" ng-click="setPath('/#' + $location.path())" ng-click='stopData()'><div class="request"> Pick Me Up! </div></a>
     </div>
   </div>
