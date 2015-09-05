@@ -6,13 +6,13 @@
 
 
 angular.module('txiRushApp')
-  .controller('coordinateController', ['$scope', '$http', '$rootScope', '$interval', '$route', '$location',
-    function($scope, $http, $rootScope, $interval, $route, $location) {
+  .controller('coordinateController', ['$scope', '$http', '$rootScope', '$interval', '$route', '$location', 'parseLogic', 'Twilio',
+    function($scope, $http, $rootScope, $interval, $route, $location, parseLogic, Twilio) {
         if ($rootScope.notLogged || !$rootScope.isCoordinator){
             $location.path("/login");
         }
         $rootScope.showFooter = false;
-        $rootScope.canRefresh = false;
+        $rootScope.canRefresh = true;
 
         $scope.pageName = "Coordinate";
         $scope.newRequest = {
@@ -23,17 +23,13 @@ angular.module('txiRushApp')
     //-----------------------Sync periodically-----------------------\\
     var requestPromise;
     $scope.getRequests = function() {
-        requestPromise = $interval(function() {
-            if ($route.current.scope.pageName=='Coordinate') {
-               $http.get($rootScope.serve("requests"))
-               .success(function(data, status, headers, config){
-                    $rootScope.requests=data.requests;
-                    $scope.totals = data.totals;
-                });
-            } else {
-                $scope.stopRequests();
-            }
-        }, 1000);
+        // requestPromise = $interval(function() {
+        //     if ($route.current.scope.pageName=='Coordinate') {
+        //        parseLogic.getRequests();
+        //     } else {
+        //         $scope.stopRequests();
+        //     }
+        // }, 1000);
     };
 
       $scope.stopRequests = function() {
@@ -43,7 +39,7 @@ angular.module('txiRushApp')
         }
       };
 
-      $scope.getRequests();  
+      parseLogic.getRequests();  
 
       //-----------------------Show Info Functions-----------------------\\
 
@@ -57,22 +53,31 @@ angular.module('txiRushApp')
         alert(message);
       };
 
+      $scope.formatContact = function(rushee){
+        if (typeof rushee.get("contact") !== 'number'){
+          return "";
+        }
+        return " - " + rushee.get("contact");
+      }
+
       //-----------------------Sending Functions-----------------------\\
 
       $scope.initiateSend = function(){
         $rootScope.requesting = true;
+        $rootScope.setPath('/coordinate');
       };
 
       $scope.send = function(){
         if ($scope.sendLoop!=undefined && $scope.driver!=undefined){
           var message = ": Please begin a route on " + $scope.sendLoop + " Loop --";
-          var testMessage = ": testing van app, isn't this awesome? Don't reply to this number --"
-          var postData = {
-            "recipient" : $scope.driver.cell,
-            "message" : $scope.driver.name + message + $rootScope.me.name
-          }
-          $http.post($rootScope.serve("sms"), postData);
-          $rootScope.requesting = false;
+          var testMessage = ": testing van app, isn't this awesome? Don't reply to this number --";
+          Twilio.post(6509967546, testMessage);
+          // var postData = {
+          //   "recipient" : $scope.driver.cell,
+          //   "message" : $scope.driver.name + message + $rootScope.me.name
+          // }
+          // $http.post($rootScope.serve("sms"), postData);
+          // $rootScope.requesting = false;
         }
       };
 
@@ -85,26 +90,27 @@ angular.module('txiRushApp')
           if ($scope.newRequest.cell!=null && $scope.newRequest.cell!=""){
             var confirmDialog = "Add " + $scope.newRequest.name + " ( cell: " + $scope.newRequest.cell +")?";
             if (confirm(confirmDialog)){
-              var postData = {
-                "location" : location.location,
-                "name" : $scope.newRequest.name,
-                "cell" : $scope.newRequest.cell
-              }
-              $http.post($rootScope.serve("requests/add"), postData).success(function(data){
-                $scope.newRequest.name=null;
-                $scope.newRequest.cell=null;
-              });
+              parseLogic.submitRequest(location, $scope.newRequest.name, $scope.newRequest.cell);
             }
           }
         }
+        $rootScope.refresh();
       }
-
-      $scope.removeRushee = function(location, name){
-        var postData = {
-          "location" : location.location,
-          "name" : name,
-        };
-        $http.post($rootScope.serve("requests/delete"), postData);
+ 
+      $scope.removeRushee = function(rushee){
+        var confirmDialog = "Remove " + rushee.get("name") + "?";
+        if (confirm(confirmDialog)){
+          rushee.destroy({
+            success : function(){
+              $rootScope.refresh();
+              console.log("SUCCESSFULLY REMOVED RUSHEE FROM QUEUE: ", rushee);
+            },
+            error : function(object, error){
+              console.log("FAILED TO REMOVE RUSHEE: ", error);
+            }
+          });
+        }
+          
       };
 
     //-----------------------Selection Functions-----------------------\\
@@ -133,7 +139,7 @@ angular.module('txiRushApp')
     $scope.selectDriver = function(driver){
         $scope.driver = driver;
         $scope.clearSelectedDrivers();
-        var element = document.getElementById(driver.kerberos);
+        var element = document.getElementById(driver.get("delta"));
         element.className += " " + "selected";
     };
 

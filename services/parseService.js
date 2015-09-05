@@ -116,13 +116,19 @@ app.factory('parseLogic', function($rootScope, $location){
 	      			var key = routes[i].get("name");
 	      			var locations = routes[i].get("locations");
 	      			$rootScope.routes[key] = locations;
+	      			$rootScope.totals[key] = 0;
 
 	      			for (var j = 0; j < locations.length; j++){
 	      				$rootScope.requests[locations[j]] = [];
 	      			}
+
+	      			for (var route in $rootScope.routes){
+	      				console.log(route);
+	      			}
 	      		}
 		        console.log("ROUTES RETRIEVAL SUCCESS: ", $rootScope.routes);
 		        console.log("REQUESTS UPDATED: ", $rootScope.requests);
+		        console.log("REQUEST TOTALS UPDATED: ", $rootScope.totals);
 		        $("#loader").hide();		        
 		    },
 		    error : function(error){
@@ -134,19 +140,31 @@ app.factory('parseLogic', function($rootScope, $location){
 
 	service.getRequests = function(){
 		$("#loader").show();
-		//Reset requests to avoid duplicates
+		//Reset requests and totals to avoid duplicates
 		for (var key in $rootScope.requests){
 			$rootScope.requests[key] = [];
 		};
+		for (var loc in $rootScope.totals){
+			$rootScope.totals[loc] = 0;
+		}
 		var requestQuery = new Parse.Query(Parse.Object.extend("Request"));
 	    return requestQuery.find({
 	      	success : function(requests){
 	      		for (var i=0; i < requests.length; i++){
 	      			var location = requests[i].get("location");
 	      			$rootScope.requests[location].push(requests[i]);
+
+	      			//Update totals
+	      			$rootScope.totals['All'] += 1;
+	      			if($rootScope.locations.indexOf(location) > 8){
+	      				$rootScope.totals['East'] += 1;
+	      			} else{
+	      				$rootScope.totals['West'] += 1;
+	      			}
 	      		}
 	      		$rootScope.$apply();
 		        console.log("REQUESTS RETRIEVAL SUCCESS: ", $rootScope.requests);
+		        console.log("REQUEST TOTALS UPDATED: ", $rootScope.totals);
 		        $("#loader").hide();		        
 		    },
 		    error : function(error){
@@ -156,19 +174,58 @@ app.factory('parseLogic', function($rootScope, $location){
 	    });
 	}
 
-	service.submitRequest = function(location){
+	service.submitRequest = function(location, name, contact){
+		//IF USER IS REGISTERED, DELETE DUPLICATE REQUESTS FROM SERVER
+		if (name != 'Anonymous Rushee' && contact.toString().length == 10){
+			var Request = Parse.Object.extend("Request");
+			var requestQuery = new Parse.Query(Request);
+			requestQuery.equalTo("contact", contact);
+			requestQuery.find({
+				success : function(requests){
+					for (var i = 0; i < requests.length; i++){
+						if (requests[i].get("name") == name){
+							requests[i].destroy();
+						}
+					}
+					//THEN SEND A NEW REQUEST
+					service.sendNewRequest(location, name, contact);
+					console.log("SUCCESSFULLY REMOVED PREVIOUS REQUESTS");
+				},
+				error : function(requests, error){
+					console.log("FAILED TO REMOVE PREVIOUS REQUESTS");
+				}
+			})
+		} else{
+			//OTHERWISE, DESTORY PREVIOUS REQUEST, IF IT EXISTS;
+			if ($rootScope.lastRequest){
+				$rootScope.lastRequest.destroy();
+			}
+			$rootScope.me.contact = prompt("[Optional] Enter your Mobile Number");
+
+			service.sendNewRequest(location, name, $rootScope.me.contact);
+		}			
+	};
+
+	service.sendNewRequest = function(location, name, contact){
 		var Request = Parse.Object.extend("Request");
 		var request = new Request();
 		request.set("location", location);
-		if ($rootScope.me.contact){
-			request.set("contact", contact);
-		}
+		request.set("name", name);
+		request.set("contact", contact);
 		request.save(null, {
 			success: function(request){
+				$rootScope.refresh();
+				$rootScope.lastRequest = request;
+				$location.path($rootScope.returnPath);
+				$rootScope.requesting = false;
+				$rootScope.refresh();
 				alert("Your request has been registered, we will send a van to come get you shortly!");
 			},
-			error: function(error){
+			error: function(object, error){
+				$location.path($rootScope.returnPath);
+				$rootScope.requesting = false;
 				alert("Sorry, we were not able to process your request. Please check if you are connected to the internet.");
+				console.log(error);
 			}
 		});
 	}

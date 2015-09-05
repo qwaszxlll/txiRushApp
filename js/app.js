@@ -61,11 +61,13 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
     $rootScope.showFooter = true;
     $rootScope.configComplete = false;
     
+    $rootScope.locations = ["Maseeh","Mccormick","Baker","Burton Conner","Macgregor","New House","Next House","Simmons","Student Center","77 Mass Ave","Stata @ Vassar","Media Lab @ Ames"];
     $rootScope.requests = {};
+    $rootScope.totals = {};
     $rootScope.routes = {};
     $rootScope.vans = [];
     $rootScope.me = {
-          name : '',
+          name : 'Anonymous Rushee',
           contact : ''
         }
 
@@ -108,9 +110,11 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
     };
     $rootScope.back = function(){
       $rootScope.requesting=false;
+      $location.path($rootScope.returnPath);
     }
 
     $rootScope.setPath = function(path){
+      console.log("SETTING RETURN PATH: ", path);
         $rootScope.returnPath=path;
     };
 
@@ -118,10 +122,5 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
         parseLogic.getVans();
         parseLogic.getRequests();
     }
-
-    $("#window").ready(function() {
-            // Animate loader off screen
-            $("#loader").hide();
-    });
 
 });

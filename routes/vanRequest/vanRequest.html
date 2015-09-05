@@ -26,7 +26,7 @@ and open the template in the editor.
                 on this list, please call 617-9020-TXI</p>
         </div>
         <div class="footer">
-            <a href={{returnPath}} ng-show="submitable()" ng-click="submitRequest()"><div class="request">Submit</div></a>
+            <a href={{returnPath}} ng-show="submitable()" ng-click="submitRequest(selectedLocation, me.name, me.contact)"><div class="request">Submit</div></a>
         </div>
     </body>
 </html>

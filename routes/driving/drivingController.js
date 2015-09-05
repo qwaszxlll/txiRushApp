@@ -68,6 +68,8 @@ angular.module('txiRushApp')
         east.className = "startButton loopButton";
         var west = document.getElementById('West');
         west.className = "startButton loopButton";
+        var all = document.getElementById('All');
+        all.className = "startButton loopButton";
     };
     $rootScope.selectLoop = function(loop){
         $scope.loop = $rootScope.routes[loop];

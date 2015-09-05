@@ -56,7 +56,7 @@ angular.module('txiRushApp')
         };
 
         $scope.submitRequest = function(){
-            parseLogic.submitRequest($scope.selectedLocation);
+            parseLogic.submitRequest($scope.selectedLocation, $rootScope.me.name, parseInt($rootScope.me.contact));
             // var postRequest = "https://rushtxi.mit.edu/app/api/pickup/"
             //     +$scope.selectedLocation;
 

@@ -95,6 +95,12 @@ a{
     float: left;
 }
 
+.backBtn{
+    position:absolute;
+    top:0.5em;
+    left:0.5em;
+}
+
 .refreshBtn{
     position:absolute;
     top:0.5em;
