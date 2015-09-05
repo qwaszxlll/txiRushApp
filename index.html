@@ -25,7 +25,7 @@
     <!-- VIEWS -->
     <div ng-view class="window" ng-cloak></div>
     <!-- NAV BAR -->
-    <div ng-show="!hasPopup" class="navbar" ng-cloak>
+    <div class="navbar" ng-show="!hasPopup" ng-cloak>
         <img id="menubutton" ng-class="{'rotated': showmenu, 'notRotated': !showmenu, 'slideAll': showmenu}" ng-click="toggleMenu()" ng-show='!requesting' src="img/MenuButton.png">
         <img id="menubutton" ng-click="back()" ng-show='requesting' src="img/WhiteArrowRound.png">
         <h1 class="title">{{$route.current.scope.pageName}}</h1>
@@ -37,7 +37,7 @@
         <img class='loaderWheel' src="img/loading_wheel.gif">
     </div>
     <!-- FOOTER -->
-    <div ng-show="showFooter && !hasPopup" class="footer" ng-class="{'slideAll': showmenu}">
+    <div class="footer animateAll" ng-class="{'slideAll': showmenu}" ng-show="showFooter && !hasPopup">
         <a href="#/vanRequest" ng-click="setPath('/#' + $location.path())" ng-click='stopData()'><div class="request"> Pick Me Up! </div></a>
     </div>
   </div>

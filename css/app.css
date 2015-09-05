@@ -58,7 +58,8 @@ a{
     width:100vw;
     left:inherit;
     margin-top: 4em;
-    overflow:hidden;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
 }
 
 .selectable{
