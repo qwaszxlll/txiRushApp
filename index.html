@@ -20,22 +20,8 @@
   <link rel="stylesheet" href="routes/login/login.css"/>
 </head>
 <body ng-controller="AppController">
-  <!-- SIDE BAR -->
-  <nav class='sidebar animateAll' class="fixed" ng-class="{'sidebarHidden': !showmenu}" ng-cloak>
-    <div ng-show="showmenu">
-      <a ng-click="toggleMenu()" href="#/events">Events</a>
-      <a ng-click="toggleMenu()" href="#/vantracker">Van Tracker</a>
-      <a ng-click="toggleMenu()" href="#/brothers">Brothers</a>
-      <a ng-click="toggleMenu()" ng-show="notLogged" href="#/login">Login</a>
-      <a ng-click="toggleMenu()" ng-show="!notLogged" href="#/me">Me</a>
-      <a ng-click="toggleMenu()" ng-show="isBrother" href="#/driving" >Drive</a>
-      <a ng-click="toggleMenu()" ng-show="isCoordinator" href="#/coordinate">Coordinate</a>
-      <a ng-click="logout()" ng-show="!notLogged" href="#/login">Logout</a>
-    </div>
-  </nav>
-
   <!-- MAIN WINDOW -->
-  <div ng-show="configComplete" ng-class="{'slideAll': showmenu, 'all': !showmenu}">
+  <div ng-show="configComplete" class="animateAll" ng-class="{'slideAll': showmenu, 'all': !showmenu}">
     <!-- VIEWS -->
     <div ng-view class="window" ng-cloak></div>
     <!-- NAV BAR -->
@@ -57,6 +43,20 @@
   </div>
   <!-- CLICK AREA TO HIDE MENU -->
   <div class="window slideAll" ng-click="closeMenu()" ng-show="showmenu"></div>
+
+  <!-- SIDE BAR -->
+  <nav class='sidebar animateAll' class="fixed" ng-class="{'sidebarHidden': !showmenu}" ng-cloak>
+    <div ng-show="showmenu">
+      <a ng-click="toggleMenu()" href="#/events">Events</a>
+      <a ng-click="toggleMenu()" href="#/vantracker">Van Tracker</a>
+      <a ng-click="toggleMenu()" href="#/brothers">Brothers</a>
+      <a ng-click="toggleMenu()" ng-show="notLogged" href="#/login">Login</a>
+      <a ng-click="toggleMenu()" ng-show="!notLogged" href="#/me">Me</a>
+      <a ng-click="toggleMenu()" ng-show="isBrother" href="#/driving" >Drive</a>
+      <a ng-click="toggleMenu()" ng-show="isCoordinator" href="#/coordinate">Coordinate</a>
+      <a ng-click="logout()" ng-show="!notLogged" href="#/login">Logout</a>
+    </div>
+  </nav>
   
   
 
