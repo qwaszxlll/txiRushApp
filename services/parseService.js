@@ -19,6 +19,9 @@ app.factory('parseLogic', function($rootScope, $location){
 	      	success : function(brothers){
 	      		$rootScope.drivers = [];
 	      		$rootScope.brothers = brothers;
+	      		$rootScope.brothers.sort(function(a, b){
+	      			return a.get("delta") - b.get("delta");
+	      		});
 
 		        for (var i = 0; i < brothers.length; i++){
 		        	var currBrother = $rootScope.brothers[i];
@@ -259,7 +262,39 @@ app.factory('parseLogic', function($rootScope, $location){
         		console.log("FAILED TO ADD NEW VAN: ", error);
         	}
         })
-	}
+	};
+
+	service.setCopilot = function(contact, isDriving){
+		var userQuery = new Parse.Query(Parse.Object.extend("User"));
+        userQuery.equalTo("contact", contact);
+        userQuery.first({
+        	success : function(user){
+        		console.log("CURRENT USER", user);
+        		user.set("isDriving", isDriving);
+        		if (isDriving){
+        			user.set("vanID", $rootScope.currentVan.id);
+        		} else{
+        			user.set("vanID", undefined);
+        		}
+        		
+        		user.save(null, {
+		            success : function(){
+		            	if (isDriving){
+		            		console.log("NOW DRIVING WITH ", user.get("username"), user.get("isDriving"));
+		            	} else{
+		            		console.log("NO LONGER DRIVING WITH ", user.get("username"));
+		            	}
+		            },
+		            error : function(object, error){
+		                console.log("UNABLE TO SAVE COPILOT", error);
+		            }
+		        });
+        	}, 
+        	error : function(user, error){
+        		console.log("UNABLE TO FIND COPILOT: " + contact, error);
+        	}
+        })
+	};
 
 	service.handleLogin = function(name, password, isBrother, isCoordinator){
 		var userQuery = new Parse.Query(Parse.Object.extend("User"));

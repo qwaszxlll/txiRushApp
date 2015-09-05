@@ -86,8 +86,8 @@ angular.module('txiRushApp')
         }
     };
     $rootScope.selectCopilot = function(id, index){
+        $scope.copilot = $rootScope.brothers[index];
         $scope.copilotID = id;
-        $scope.copilotContact = $rootScope.brothers[index].get("contact");
         $scope.clearSelectedCopilots();
         var element = document.getElementById(id);
         element.className += " " + "selected";
@@ -100,7 +100,9 @@ angular.module('txiRushApp')
         $scope.full=false;
         $rootScope.currentRoute = $scope.loop;
 
-        parseLogic.submitNewVan($scope.copilotID, $scope.copilotContact, $scope.loop);
+        $scope.copilot.set("isDriving", true);
+        $scope.copilot.save();
+        parseLogic.submitNewVan($scope.copilotID, $scope.copilot.get("contact"), $scope.loop);
     };
     
     $scope.complete = function(status){
@@ -140,17 +142,6 @@ angular.module('txiRushApp')
             }
         }
     };  
-
-    // $scope.update = function(loc){
-    //     var postString = "https://rushtxi.mit.edu/app/api/vans/clear/" + loc;
-    //     if (loc!='Theta Xi'){
-    //         var updatePromise = $http.post(postString);
-    //         updatePromise.success(function(data){
-    //             $rootScope.route = data.route;
-    //             $rootScope.currentLocation=data.current_location;
-    //         });
-    //     }
-    // }
     
     $scope.next = function(){
         if ($rootScope.currentVan.get("location") >= $rootScope.currentRoute.length - 1){
@@ -173,6 +164,8 @@ angular.module('txiRushApp')
       $rootScope.selectingCopilot=true;
       $rootScope.currentVan.destroy({
         success : function(object){
+            object.get("copilot").set("isDriving", false);
+            object.get("copilot").save();
             $rootScope.currentUser.set("isDriving", false);
             $rootScope.currentUser.set("vanID", '');
             $rootScope.currentUser.save();
