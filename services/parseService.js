@@ -124,10 +124,6 @@ app.factory('parseLogic', function($rootScope, $location){
 	      			for (var j = 0; j < locations.length; j++){
 	      				$rootScope.requests[locations[j]] = [];
 	      			}
-
-	      			for (var route in $rootScope.routes){
-	      				console.log(route);
-	      			}
 	      		}
 		        console.log("ROUTES RETRIEVAL SUCCESS: ", $rootScope.routes);
 		        console.log("REQUESTS UPDATED: ", $rootScope.requests);

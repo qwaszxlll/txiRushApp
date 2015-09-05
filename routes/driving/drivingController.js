@@ -18,7 +18,7 @@
 angular.module('txiRushApp')
   .controller('drivingController', ['$scope', '$http', '$rootScope', '$interval', '$route', '$location', 'parseLogic',
     function($scope, $http, $rootScope, $interval, $route, $location, parseLogic) {
-        if ($rootScope.notLogged || !$rootScope.isBrother){
+        if ($rootScope.notLogged || !$rootScope.isBrother || !$rootScope.configComplete){
             $location.path("/login");
         }
 
@@ -99,6 +99,7 @@ angular.module('txiRushApp')
         $scope.setVisibility(true, false, true);
         $scope.full=false;
         $rootScope.currentRoute = $scope.loop;
+        $rootScope.requestHistory = [];
 
         $scope.copilot.set("isDriving", true);
         $scope.copilot.save();
@@ -149,7 +150,7 @@ angular.module('txiRushApp')
         } else {
             var location = $rootScope.currentRoute[$rootScope.currentVan.get("location")]
             var requests = $rootScope.requests[location];
-            console.log(requests);
+            $rootScope.requestHistory.push(requests);
             for (var i=0; i < requests.length; i++){
                 console.log(requests[i]);
                 requests[i].destroy();
@@ -161,9 +162,17 @@ angular.module('txiRushApp')
     };
 
     $scope.back = function(){
-        if ($rootScope.currentLocation=='Theta Xi'){
-            $scope.end();
+        var lastRequests = $rootScope.requestHistory.pop();
+        for (var i=0; i < lastRequests.length; i++){
+            console.log(lastRequests[i]);
+            var Request = Parse.Object.extend("Request");
+            var request = new Request();
+            request.set("location", lastRequests[i].get("location"));
+            request.set("contact", lastRequests[i].get("contact"));
+            request.set("name", lastRequests[i].get("name"));
+            request.save()
         }
+        $rootScope.refresh();
         $rootScope.currentVan.increment("location", -1);
         $rootScope.currentVan.save();
     };

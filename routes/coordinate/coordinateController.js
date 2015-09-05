@@ -8,7 +8,7 @@
 angular.module('txiRushApp')
   .controller('coordinateController', ['$scope', '$http', '$rootScope', '$interval', '$route', '$location', 'parseLogic', 'Twilio',
     function($scope, $http, $rootScope, $interval, $route, $location, parseLogic, Twilio) {
-        if ($rootScope.notLogged || !$rootScope.isCoordinator){
+        if ($rootScope.notLogged || !$rootScope.isCoordinator || !$rootScope.configComplete){
             $location.path("/login");
         }
         $rootScope.showFooter = false;

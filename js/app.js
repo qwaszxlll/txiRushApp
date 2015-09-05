@@ -62,6 +62,7 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
     $rootScope.configComplete = false;
     
     $rootScope.locations = ["Maseeh","Mccormick","Baker","Burton Conner","Macgregor","New House","Next House","Simmons","Student Center","77 Mass Ave","Stata @ Vassar","Media Lab @ Ames"];
+    $rootScope.requestHistory = [];
     $rootScope.requests = {};
     $rootScope.totals = {};
     $rootScope.routes = {};
