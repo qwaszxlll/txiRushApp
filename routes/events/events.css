@@ -105,9 +105,10 @@ and open the template in the editor.
 
 .eventDescription{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    width: 90%;
     margin-top:0em;
     padding:0.8em;
-    font-size:1em;
+    font-size:1.1em;
     font-weight: 100;
     color: #606062;
 }
