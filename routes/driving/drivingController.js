@@ -35,7 +35,8 @@ angular.module('txiRushApp')
     
     //Visibility Functions
     $scope.formComplete = function(){
-        return $scope.loop!=null && $scope.copilotID!=null;
+        return $scope.loop!=null;
+        // return $scope.loop!=null && $scope.copilotID!=null;
     };
     
     $scope.routeAvailable = function(){
@@ -101,9 +102,10 @@ angular.module('txiRushApp')
         $rootScope.currentRoute = $scope.loop;
         $rootScope.requestHistory = [];
 
-        $scope.copilot.set("isDriving", true);
-        $scope.copilot.save();
-        parseLogic.submitNewVan($scope.copilotID, $scope.copilot.get("contact"), $scope.loop);
+        // $scope.copilot.set("isDriving", true);
+        // $scope.copilot.save();
+        // parseLogic.submitNewVan($scope.copilotID, $scope.copilot.get("contact"), $scope.loop);
+        parseLogic.submitNewVan(null, null, $scope.loop)
     };
     
     $scope.complete = function(status){
@@ -162,19 +164,24 @@ angular.module('txiRushApp')
     };
 
     $scope.back = function(){
-        var lastRequests = $rootScope.requestHistory.pop();
-        for (var i=0; i < lastRequests.length; i++){
-            console.log(lastRequests[i]);
-            var Request = Parse.Object.extend("Request");
-            var request = new Request();
-            request.set("location", lastRequests[i].get("location"));
-            request.set("contact", lastRequests[i].get("contact"));
-            request.set("name", lastRequests[i].get("name"));
-            request.save()
+        if ($rootScope.currentVan.get("location") == 0){
+            $scope.done();
+        } else{
+            var lastRequests = $rootScope.requestHistory.pop();
+            for (var i=0; i < lastRequests.length; i++){
+                console.log(lastRequests[i]);
+                var Request = Parse.Object.extend("Request");
+                var request = new Request();
+                request.set("location", lastRequests[i].get("location"));
+                request.set("contact", lastRequests[i].get("contact"));
+                request.set("name", lastRequests[i].get("name"));
+                request.save()
+            }
+            $rootScope.refresh();
+            $rootScope.currentVan.increment("location", -1);
+            $rootScope.currentVan.save();
         }
-        $rootScope.refresh();
-        $rootScope.currentVan.increment("location", -1);
-        $rootScope.currentVan.save();
+            
     };
     
     $scope.done = function(){
@@ -182,8 +189,8 @@ angular.module('txiRushApp')
       $rootScope.selectingCopilot=true;
       $rootScope.currentVan.destroy({
         success : function(object){
-            object.get("copilot").set("isDriving", false);
-            object.get("copilot").save();
+            // object.get("copilot").set("isDriving", false);
+            // object.get("copilot").save();
             $rootScope.currentUser.set("isDriving", false);
             $rootScope.currentUser.set("vanID", '');
             $rootScope.currentUser.save();

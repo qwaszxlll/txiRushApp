@@ -235,15 +235,15 @@ app.factory('parseLogic', function($rootScope, $location){
         var pilot = new Brother();
         pilot.id = $rootScope.me.id;
 
-        var copilot = new Brother();
-        copilot.id = copilotID;
+        // var copilot = new Brother();
+        // copilot.id = copilotID;
 
         var Van = Parse.Object.extend("Van");
         $rootScope.currentVan = new Van();
         $rootScope.currentVan.set("driver", pilot);
-        $rootScope.currentVan.set("copilot", copilot);
+        // $rootScope.currentVan.set("copilot", copilot);
         $rootScope.currentVan.set("route", route);
-        $rootScope.currentVan.set("contact", copilotContact);
+        $rootScope.currentVan.set("contact", $rootScope.me.contact);
         $rootScope.currentVan.set("location", 0);
         $rootScope.currentVan.set("full", false);
         $rootScope.currentVan.save({
