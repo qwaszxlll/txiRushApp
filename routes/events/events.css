@@ -50,7 +50,7 @@ and open the template in the editor.
     top:0;
     height: 100%;
     width: 100%;
-    background: rgba(56,68,85,1);
+    background: rgba(56,68,85,0.9);
     overflow:hidden;
     text-align: center;
 }
@@ -62,10 +62,10 @@ and open the template in the editor.
 }
 
 .xButton{
-    margin-top: -3.3em;
-    margin-right: 2em;
+    position:fixed;
+    right: 1.5em;
+    top: 1em;
     height: 3em;
-    float: right;
     cursor: pointer;
 }
 

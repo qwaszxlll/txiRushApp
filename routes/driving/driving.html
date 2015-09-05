@@ -52,14 +52,11 @@ and open the template in the editor.
         </div>
         
         <!--Footers-->
-        <!--Initiating Footer-->
-        <div class="footer animateAll" ng-show="initiating" ng-class="{'slideAll': showmenu}">
-            <div class="request" ng-click="startRoute()" ng-show="formComplete()"> 
+        <div class="footer animateAll" ng-class="{'slideAll': showmenu}">
+            <!--Initiating Footer-->
+            <div class="request" ng-click="startRoute()" ng-show="formComplete() && !enRoute"> 
                 Start Route
             </div>
-        </div>
-        <!--Driving Footers-->
-        <div class="footer animateAll" ng-show="isDriving" ng-class="{'slideAll': showmenu}">
             <!--En Route Footer-->
             <div class="optionsContainer" ng-show="enRoute">
                 <img class="drivingButton left" src="img/yesButton.png" ng-click="next()">

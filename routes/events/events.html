@@ -29,9 +29,9 @@ and open the template in the editor.
             </li>
         </ul>
         <!-- POPUP -->
-        <div class="popup" ng-show="hasPopup" id="popup" ng-cloak>
+        <div class="popup" ng-show="hasPopup" id="popup" ng-click="closePopup()" ng-cloak>
             <h1 class="title popupTitle">Event Info</h1>
-            <img class="xButton" src="img/xButton.png" ng-click="closePopup()">
+            <img class="xButton" src="img/xButton.png">
             <div class="popUpField">
                 <div class="picContainer" style={{getImageStyle(currentEvent.photoID)}}>
                     <div class="eventName"> {{currentEvent.name}} </div>
