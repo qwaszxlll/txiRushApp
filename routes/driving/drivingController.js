@@ -146,9 +146,18 @@ angular.module('txiRushApp')
     $scope.next = function(){
         if ($rootScope.currentVan.get("location") >= $rootScope.currentRoute.length - 1){
             $scope.done();
+        } else {
+            var location = $rootScope.currentRoute[$rootScope.currentVan.get("location")]
+            var requests = $rootScope.requests[location];
+            console.log(requests);
+            for (var i=0; i < requests.length; i++){
+                console.log(requests[i]);
+                requests[i].destroy();
+            }
+            $rootScope.currentVan.increment("location");
+            $rootScope.currentVan.save();
+            $rootScope.refresh();
         }
-        $rootScope.currentVan.increment("location");
-        $rootScope.currentVan.save();
     };
 
     $scope.back = function(){

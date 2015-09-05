@@ -127,19 +127,19 @@ app.controller("AppController", function($scope, $rootScope, $http, $route, $loc
         $rootScope.currentUser.fetch({
           success : function(object){
             $rootScope.isDriving = object.get("isDriving");
-            var brotherQuery = new Parse.Query(Parse.Object.extend("Brother"));
-            brotherQuery.equalTo("contact", $rootScope.currentUser.get("contact"));
-            brotherQuery.first({
-              success : function(brother){
-                if (brother.get("isDriving")){
-                  $rootScope.isDriving = true;
-                }
-                console.log("REFRESHING BROTHER ISDRIVING VAR: ", brother.get("isDriving"));
-              },
-              error : function(object, error){
-                console.log("FAILED TO REFRESH BROTHER ISDRIVING VAR: ", error);
-              }
-            });
+            // var brotherQuery = new Parse.Query(Parse.Object.extend("Brother"));
+            // brotherQuery.equalTo("contact", $rootScope.currentUser.get("contact"));
+            // brotherQuery.first({
+            //   success : function(brother){
+            //     if (brother.get("isDriving")){
+            //       $rootScope.isDriving = true;
+            //     }
+            //     console.log("REFRESHING BROTHER ISDRIVING VAR: ", brother.get("isDriving"));
+            //   },
+            //   error : function(object, error){
+            //     console.log("FAILED TO REFRESH BROTHER ISDRIVING VAR: ", error);
+            //   }
+            // });
             console.log("REFRESHED USER DATA: ", $rootScope.isDriving);
           },
           error : function(object, error){
