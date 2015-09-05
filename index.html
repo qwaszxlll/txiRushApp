@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  
+
   <title>TXI Rush App 2014</title>
   <!-- <meta name="description" content=""> -->
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -43,8 +43,6 @@
         <a href="#/vanRequest" ng-click="setPath('/#' + $location.path())" ng-click='stopData()'><div class="request"> Pick Me Up! </div></a>
     </div>
   </div>
-  <!-- CLICK AREA TO HIDE MENU -->
-  <div class="window slideAll" ng-click="closeMenu()" ng-show="showmenu"></div>
 
   <!-- SIDE BAR -->
   <nav class='sidebar animateAll' ng-class="{'sidebarHidden': !showmenu}" ng-cloak>
@@ -59,6 +57,9 @@
       <a ng-click="logout()" ng-show="!notLogged" href="#/login">Logout</a>
     </div>
   </nav>
+
+  <!-- CLICK AREA TO HIDE MENU -->
+  <div class="window slideAll" ng-click="closeMenu()" ng-show="showmenu"></div>
   
   
 
