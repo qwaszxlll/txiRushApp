@@ -321,7 +321,7 @@ app.factory('parseLogic', function($rootScope, $location){
                     user.signUp(null, {
                         success : function(){
                         	$rootScope.notLogged = false;
-                        	$location.path('/me');
+                        	$location.path('/events');
                         	$rootScope.$apply();
                             console.log("SUCCESSFULLY SIGNED UP AS: ", $rootScope.me.name);
                         },
