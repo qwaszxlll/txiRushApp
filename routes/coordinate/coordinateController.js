@@ -84,6 +84,10 @@ angular.module('txiRushApp')
       //-----------------------Rushee Add And Remove-----------------------\\
 
       $scope.addRushee = function(location){
+        $scope.newRequest = {
+          name : '',
+          cell : ''
+        };
         $scope.newRequest.name=prompt("Enter Rushee's Name");
         if ($scope.newRequest.name!=null && $scope.newRequest.name!=""){
           $scope.newRequest.cell=prompt("Enter Rushee's Cell");

@@ -210,10 +210,9 @@ app.factory('parseLogic', function($rootScope, $location){
 		var request = new Request();
 		request.set("location", location);
 		request.set("name", name);
-		request.set("contact", contact);
+		request.set("contact", parseInt(contact));
 		request.save(null, {
 			success: function(request){
-				$rootScope.refresh();
 				$rootScope.lastRequest = request;
 				$location.path($rootScope.returnPath);
 				$rootScope.requesting = false;
